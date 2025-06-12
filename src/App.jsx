@@ -1,8 +1,13 @@
 
+import Register from "./pages/authentication/Register";
+
+
 function App() {
 	return (
 		<>
-			<h2>This is App Page</h2>
+			<Register className="bg-muted flex min-h-screen flex-col items-center justify-center p-6 md:p-10" />
 		</>
 	);
+}
+
 export default App;
