@@ -1,5 +1,6 @@
-import { LoginForm } from "./components/login-form";
+
 import Register from "./pages/authentication/Register";
+
 
 function App() {
 	return (
