@@ -22,7 +22,7 @@ export default function ListingCard(props) {
 			<img
 				src={imageUrl}
 				alt={title}
-				className="h-40 w-full object-cover rounded-t-2xl"
+				className="h-50 w-full object-cover rounded-t-2xl"
 			/>
 			<CardHeader className="flex flex-col gap-2">
 				<Badge

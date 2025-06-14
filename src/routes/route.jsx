@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-
-import Login from "../pages/authentication/Login";
-import Register from "../pages/authentication/Register";
-import Home from "../pages/home/Home";
-import ListingCardProps from "../layout/home/ListingCardProps";
+import Register from "../pages/Register";
+import Login from "../pages/Login";
+import Home from "../pages/Home";
 import AlertCardProps from "../layout/home/AlertCardProps";
 import UpcomingEventCardProps from "../layout/events/UpcomingEventCardProps";
+import ListingCard from "../layout/home/ListingCardProps";
+import AddSkill from "../layout/skills/AddSkill";
 
 const routes = createBrowserRouter([
 	{
@@ -15,15 +15,19 @@ const routes = createBrowserRouter([
 		children: [
 			{
 				index: true,
-				element: <div>Welcome to the Home Page</div>,
+				element: <ListingCard />,
 			},
 			{
 				path: "test",
-				element: <div>This is a test page</div>,
+				element: <AlertCardProps />,
 			},
 			{
-				path: "evaluations",
-				element: <div>This is a evaluations page</div>,
+				path: "offered",
+				element: <UpcomingEventCardProps />,
+			},
+			{
+				path: "addnewskill",
+				element: <AddSkill />,
 			},
 		],
 	},
@@ -35,14 +39,6 @@ const routes = createBrowserRouter([
 	{
 		path: "/register",
 		element: <Register />,
-	},
-	{
-		path: "/home",
-		element: <Home />,
-	},
-	{
-		path: "/test",
-		element: <AlertCardProps />,
 	},
 ]);
 

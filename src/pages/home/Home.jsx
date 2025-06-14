@@ -9,19 +9,7 @@ export const iframeHeight = "800px";
 export const description = "A sidebar with a header and a search form.";
 
 function Home() {
-	const [isDark, setIsDark] = useState(false);
-
-	useEffect(() => {
-		const html = document.documentElement;
-		if (isDark) {
-			html.classList.add("dark");
-		} else {
-			html.classList.remove("dark");
-		}
-	}, [isDark]);
-
-	const toggleDarkMode = () => setIsDark((prev) => !prev);
-
+	
 	return (
 		<div className="[--header-height:calc(--spacing(14))]">
 			<SidebarProvider className="flex flex-col">

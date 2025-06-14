@@ -60,9 +60,9 @@ const data = {
 			title: "Skills",
 			icon: WrenchIcon,
 			items: [
-				{ title: "My Offered Skills", url: "/evaluations" },
+				{ title: "My Offered Skills", url: "/offered" },
 				{ title: "My Needed Skills", url: "#" },
-				{ title: "Add New Skill", url: "#" },
+				{ title: "Add New Skill", url: "/addnewskill" },
 			],
 		},
 		{
