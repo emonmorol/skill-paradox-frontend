@@ -3,13 +3,22 @@
 import React, { useState } from "react";
 
 import { cn } from "@/lib/utils";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Select } from "@/components/ui/select";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import {
+	Select,
+	SelectTrigger,
+	SelectValue,
+	SelectContent,
+	SelectItem,
+} from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Check } from "lucide-react";
+import Stepper from "./Stepper";
 
 const DAYS = [
 	"monday",
@@ -43,7 +52,7 @@ export default function AddSkill() {
 		type: "trade",
 		duration: "",
 		price: 0,
-		currency: "USD",
+		currency: "TK",
 	});
 
 	const [outcomes, setOutcomes] = useState([{ pricing_id: 1, outcome: "" }]);
@@ -138,120 +147,122 @@ export default function AddSkill() {
 		alert("Submitted! Check console.");
 	}
 
+	const steps = [1, 2, 3, 4, 5];
+
 	return (
-		<div className="max-w-3xl mx-auto p-6 bg-white rounded-md shadow-md">
-			{/* Step Indicators */}
-			<div className="flex justify-between mb-6">
-				{[1, 2, 3, 4, 5].map((num) => (
-					<div
-						key={num}
-						className={cn(
-							"w-8 h-8 rounded-full flex items-center justify-center font-semibold cursor-pointer",
-							step === num
-								? "bg-blue-600 text-white"
-								: "border border-gray-300 text-gray-600"
-						)}
-						onClick={() => setStep(num)}
-					>
-						{num}
-					</div>
-				))}
-			</div>
+		<div className="max-w-3xl p-6 bg-white rounded-md shadow-md">
+			<Stepper step={step} setStep={setStep} />
 
 			{/* Step 1 - Listing */}
 			{step === 1 && (
 				<>
-					<h2 className="text-2xl font-semibold mb-4">
-						Listing Information
-					</h2>
-					<div className="space-y-4">
-						<div>
-							<Label htmlFor="title">Title *</Label>
-							<Input
-								id="title"
-								value={listing.title}
-								onChange={(e) =>
-									setListing({
-										...listing,
-										title: e.target.value,
-									})
-								}
-								placeholder="Skill title"
-							/>
-						</div>
+					<Card className="w-full max-w-3xl mx-auto">
+						<CardContent className="p-6 space-y-6">
+							<h2 className="text-2xl font-semibold">
+								Listing Information
+							</h2>
 
-						<div>
-							<Label htmlFor="description">Description *</Label>
-							<Textarea
-								id="description"
-								value={listing.description}
-								onChange={(e) =>
-									setListing({
-										...listing,
-										description: e.target.value,
-									})
-								}
-								placeholder="Describe your skill"
-								rows={4}
-							/>
-						</div>
-
-						<div>
-							<Label htmlFor="proficiency">
-								Proficiency Level
-							</Label>
-							<Select
-								id="proficiency"
-								value={listing.proficiency_level}
-								onChange={(e) =>
-									setListing({
-										...listing,
-										proficiency_level: e.target.value,
-									})
-								}
-							>
-								<option value="beginner">Beginner</option>
-								<option value="intermediate">
-									Intermediate
-								</option>
-								<option value="expert">Expert</option>
-							</Select>
-						</div>
-
-						<div className="flex items-center space-x-3">
-							<Checkbox
-								id="inPerson"
-								checked={listing.is_in_person_learning}
-								onCheckedChange={(checked) =>
-									setListing({
-										...listing,
-										is_in_person_learning: !!checked,
-										location: "",
-									})
-								}
-							/>
-							<Label htmlFor="inPerson">
-								Is this in-person learning?
-							</Label>
-						</div>
-
-						{listing.is_in_person_learning && (
-							<div>
-								<Label htmlFor="location">Location</Label>
+							{/* Title */}
+							<div className="space-y-2">
+								<Label htmlFor="title">Title *</Label>
 								<Input
-									id="location"
-									value={listing.location || ""}
+									id="title"
+									placeholder="Skill title"
+									value={listing.title}
 									onChange={(e) =>
 										setListing({
 											...listing,
-											location: e.target.value,
+											title: e.target.value,
 										})
 									}
-									placeholder="Where will this take place?"
 								/>
 							</div>
-						)}
-					</div>
+
+							{/* Description */}
+							<div className="space-y-2">
+								<Label htmlFor="description">
+									Description *
+								</Label>
+								<Textarea
+									id="description"
+									placeholder="Describe your skill"
+									rows={4}
+									value={listing.description}
+									onChange={(e) =>
+										setListing({
+											...listing,
+											description: e.target.value,
+										})
+									}
+								/>
+							</div>
+
+							{/* Proficiency Level */}
+							<div className="space-y-2">
+								<Label>Proficiency Level *</Label>
+								<Select
+									value={listing.proficiency_level}
+									onValueChange={(value) =>
+										setListing({
+											...listing,
+											proficiency_level: value,
+										})
+									}
+								>
+									<SelectTrigger>
+										<SelectValue placeholder="Select level" />
+									</SelectTrigger>
+									<SelectContent>
+										<SelectItem value="beginner">
+											Beginner
+										</SelectItem>
+										<SelectItem value="intermediate">
+											Intermediate
+										</SelectItem>
+										<SelectItem value="expert">
+											Expert
+										</SelectItem>
+									</SelectContent>
+								</Select>
+							</div>
+
+							{/* In-person Learning Checkbox */}
+							<div className="flex items-center space-x-3">
+								<Checkbox
+									id="inPerson"
+									checked={listing.is_in_person_learning}
+									onCheckedChange={(checked) =>
+										setListing({
+											...listing,
+											is_in_person_learning: !!checked,
+											location: "",
+										})
+									}
+								/>
+								<Label htmlFor="inPerson">
+									Is this in-person learning?
+								</Label>
+							</div>
+
+							{/* Location if in-person */}
+							{listing.is_in_person_learning && (
+								<div className="space-y-2">
+									<Label htmlFor="location">Location</Label>
+									<Input
+										id="location"
+										placeholder="Where will this take place?"
+										value={listing.location || ""}
+										onChange={(e) =>
+											setListing({
+												...listing,
+												location: e.target.value,
+											})
+										}
+									/>
+								</div>
+							)}
+						</CardContent>
+					</Card>
 				</>
 			)}
 
