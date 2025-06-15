@@ -69,9 +69,9 @@ const data = {
 			title: "Skill Exchange",
 			icon: Repeat1Icon,
 			items: [
-				{ title: "Barter Requests", url: "#" },
-				{ title: "Paid Sessions", url: "#" },
-				{ title: "Session History", url: "#" },
+				{ title: "Barter Requests", url: "/barterrequest" },
+				{ title: "Paid Sessions", url: "paidsession" },
+				{ title: "Session History", url: "sessionhistory" },
 			],
 		},
 		{
