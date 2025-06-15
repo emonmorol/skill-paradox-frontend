@@ -8,6 +8,7 @@ import LearningOutcomes from "./LearningOutcomes";
 import Faqs from "./Faqs";
 import AvailableSlots from "./AvailableSlots";
 import { useState } from "react";
+import SkillSelector from "./SkillSelector";
 
 const DAYS = [
 	"monday",
@@ -20,11 +21,11 @@ const DAYS = [
 ];
 
 export default function AddSkill() {
-	const [step, setStep] = useState(1);
+	const [step, setStep] = useState(0);
 
 	const [listing, setListing] = useState({
 		user_id: 1,
-		skill_id: 1,
+		skill_id: 0,
 		title: "",
 		description: "",
 		proficiency_level: "beginner",
@@ -77,11 +78,13 @@ export default function AddSkill() {
 		},
 	]);
 
+	const [skillId, setSkillId] = useState(0);
+
 	function nextStep() {
 		if (step < 5) setStep(step + 1);
 	}
 	function prevStep() {
-		if (step > 1) setStep(step - 1);
+		if (step > 0) setStep(step - 1);
 	}
 
 	function addOutcome() {
@@ -134,6 +137,7 @@ export default function AddSkill() {
 	}
 
 	function canGoNext() {
+		if (skillId <= 0) return false;
 		if (step === 1) {
 			console.log("Listing:", listing);
 			return (
@@ -169,55 +173,73 @@ export default function AddSkill() {
 
 	return (
 		<div className="">
-			<div className="min-h-[35rem] w-2/3 md:w-full m-auto max-w-3xl p-6 rounded-md shadow-md flex flex-col justify-between bg-white dark:bg-black/50">
+			<div
+				className={`${
+					step === 0 ? "min-h-[15rem]" : "min-h-[35rem]"
+				} w-2/3 md:w-full m-auto max-w-3xl p-6 rounded-md shadow-md flex flex-col justify-between bg-white dark:bg-black/50`}
+			>
 				<Stepper step={step} setStep={setStep} />
-
-				{/* Step 1 - Listing */}
-				{step === 1 && (
-					<ListingInformation
+				{step === 0 && (
+					<SkillSelector
+						setStep={setStep}
+						setSkillId={setSkillId}
 						listing={listing}
-						setListing={setListing}
 					/>
 				)}
 
-				{/* Step 2 - Pricing */}
-				{step === 2 && (
-					<PricingDetails pricing={pricing} setPricing={setPricing} />
-				)}
+				{step > 0 && (
+					<>
+						{/* Step 1 - Listing */}
+						{step === 1 && (
+							<ListingInformation
+								listing={listing}
+								setListing={setListing}
+							/>
+						)}
 
-				{/* Step 3 - Outcomes */}
-				{step === 3 && (
-					<LearningOutcomes
-						outcomes={outcomes}
-						updateOutcome={updateOutcome}
-						removeOutcome={removeOutcome}
-						addOutcome={addOutcome}
-					/>
-				)}
+						{/* Step 2 - Pricing */}
+						{step === 2 && (
+							<PricingDetails
+								pricing={pricing}
+								setPricing={setPricing}
+							/>
+						)}
 
-				{/* Step 4 - FAQ */}
-				{step === 4 && (
-					<Faqs
-						faqs={faqs}
-						updateFaq={updateFaq}
-						removeFaq={removeFaq}
-						addFaq={addFaq}
-					/>
-				)}
+						{/* Step 3 - Outcomes */}
+						{step === 3 && (
+							<LearningOutcomes
+								outcomes={outcomes}
+								updateOutcome={updateOutcome}
+								removeOutcome={removeOutcome}
+								addOutcome={addOutcome}
+							/>
+						)}
 
-				{/* Step 5 - Slots */}
-				{step === 5 && (
-					<AvailableSlots
-						slots={slots}
-						updateSlot={updateSlot}
-						removeSlot={removeSlot}
-						addSlot={addSlot}
-						DAYS={DAYS}
-					/>
+						{/* Step 4 - FAQ */}
+						{step === 4 && (
+							<Faqs
+								faqs={faqs}
+								updateFaq={updateFaq}
+								removeFaq={removeFaq}
+								addFaq={addFaq}
+							/>
+						)}
+
+						{/* Step 5 - Slots */}
+						{step === 5 && (
+							<AvailableSlots
+								slots={slots}
+								updateSlot={updateSlot}
+								removeSlot={removeSlot}
+								addSlot={addSlot}
+								DAYS={DAYS}
+							/>
+						)}
+					</>
 				)}
 				{/* Navigation Buttons */}
 				<div className="flex justify-between flex-end mt-8">
-					{step > 1 && (
+					{step > 0 && (
 						<Button
 							variant="modern"
 							onClick={prevStep}
@@ -226,7 +248,7 @@ export default function AddSkill() {
 							Back
 						</Button>
 					)}
-					{step < 5 && (
+					{step > 0 && step < 5 && (
 						<Button
 							variant="modern"
 							disabled={!canGoNext()}

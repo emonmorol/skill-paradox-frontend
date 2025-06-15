@@ -1,0 +1,122 @@
+[
+	{
+		"email": "abu@esxamse.com",
+		"name": "Abu Bakar",
+		"username": "bakar",
+		"password_hash": "ssdfsdfspsdfsdf"
+	},
+	{
+		"email": "lara@domain.com",
+		"name": "Lara Croft",
+		"username": "lara",
+		"password_hash": "hash_123_lara"
+	},
+	{
+		"email": "tony@starkmail.com",
+		"name": "Tony Stark",
+		"username": "ironman",
+		"password_hash": "hash_tony_456"
+	},
+	{
+		"email": "bruce@batmail.com",
+		"name": "Bruce Wayne",
+		"username": "batman",
+		"password_hash": "hash_bruce_789"
+	},
+	{
+		"email": "peter@web.com",
+		"name": "Peter Parker",
+		"username": "spidey",
+		"password_hash": "hash_peter_101"
+	},
+	{
+		"email": "natasha@shield.org",
+		"name": "Natasha Romanoff",
+		"username": "blackwidow",
+		"password_hash": "hash_nat_202"
+	},
+	{
+		"email": "steve@capmail.com",
+		"name": "Steve Rogers",
+		"username": "cap",
+		"password_hash": "hash_steve_303"
+	},
+	{
+		"email": "clark@dailyplanet.com",
+		"name": "Clark Kent",
+		"username": "superman",
+		"password_hash": "hash_clark_404"
+	},
+	{
+		"email": "diana@amazon.org",
+		"name": "Diana Prince",
+		"username": "wonderwoman",
+		"password_hash": "hash_diana_505"
+	},
+	{
+		"email": "barry@ccpd.gov",
+		"name": "Barry Allen",
+		"username": "flash",
+		"password_hash": "hash_barry_606"
+	},
+	{
+		"email": "arthur@atlantis.gov",
+		"name": "Arthur Curry",
+		"username": "aquaman",
+		"password_hash": "hash_arthur_707"
+	},
+	{
+		"email": "selina@gotham.net",
+		"name": "Selina Kyle",
+		"username": "catwoman",
+		"password_hash": "hash_selina_808"
+	},
+	{
+		"email": "harley@arkham.com",
+		"name": "Harley Quinn",
+		"username": "harley",
+		"password_hash": "hash_harley_909"
+	},
+	{
+		"email": "bruce@banner.com",
+		"name": "Bruce Banner",
+		"username": "hulk",
+		"password_hash": "hash_banner_010"
+	},
+	{
+		"email": "stephen@sanctum.com",
+		"name": "Stephen Strange",
+		"username": "drstrange",
+		"password_hash": "hash_strange_111"
+	},
+	{
+		"email": "wanda@magicmail.com",
+		"name": "Wanda Maximoff",
+		"username": "scarletwitch",
+		"password_hash": "hash_wanda_121"
+	},
+	{
+		"email": "vision@ai.org",
+		"name": "Vision",
+		"username": "vision",
+		"password_hash": "hash_vision_131"
+	},
+	{
+		"email": "sam@falcon.com",
+		"name": "Sam Wilson",
+		"username": "falcon",
+		"password_hash": "hash_sam_141"
+	},
+	{
+		"email": "bucky@wintermail.com",
+		"name": "Bucky Barnes",
+		"username": "wintersoldier",
+		"password_hash": "hash_bucky_151"
+	},
+	{
+		"email": "nick@shield.org",
+		"name": "Nick Fury",
+		"username": "nickfury",
+		"password_hash": "hash_nick_161"
+	}
+]

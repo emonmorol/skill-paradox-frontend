@@ -2,7 +2,7 @@
 import { Check } from "lucide-react";
 import React from "react";
 
-const steps = [1, 2, 3, 4, 5];
+const steps = [0, 1, 2, 3, 4, 5];
 import { cn } from "@/lib/utils";
 
 export default function Stepper({ step, setStep }) {

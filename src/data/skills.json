@@ -1,0 +1,22 @@
+[
+	{ "name": "Web Development", "category": "Technology" },
+	{ "name": "Graphic Design", "category": "Design" },
+	{ "name": "Public Speaking", "category": "Communication" },
+	{ "name": "Digital Marketing", "category": "Business" },
+	{ "name": "Photography", "category": "Creative Arts" },
+	{ "name": "Video Editing", "category": "Multimedia" },
+	{ "name": "Data Analysis", "category": "Technology" },
+	{ "name": "Machine Learning", "category": "Technology" },
+	{ "name": "Creative Writing", "category": "Writing" },
+	{ "name": "UI/UX Design", "category": "Design" },
+	{ "name": "Project Management", "category": "Management" },
+	{ "name": "Search Engine Optimization", "category": "Business" },
+	{ "name": "Copywriting", "category": "Marketing" },
+	{ "name": "Accounting", "category": "Finance" },
+	{ "name": "Music Production", "category": "Creative Arts" },
+	{ "name": "Language Translation", "category": "Language" },
+	{ "name": "Fitness Coaching", "category": "Health & Wellness" },
+	{ "name": "Cooking", "category": "Lifestyle" },
+	{ "name": "3D Modeling", "category": "Technology" },
+	{ "name": "Cybersecurity", "category": "Technology" }
+]
