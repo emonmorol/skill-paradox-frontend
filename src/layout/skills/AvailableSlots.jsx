@@ -20,88 +20,126 @@ export default function AvailableSlots({
 	DAYS,
 }) {
 	return (
-		<div className="max-w-3xl p-6 bg-white rounded-xl shadow-lg ">
-			<h2 className="text-2xl font-semibold mb-6 text-gray-900">
+		<div className="max-w-3xl md:w-full p-6 rounded-xl shadow-lg bg-white space-y-4">
+			<h2 className="text-2xl font-semibold text-gray-900">
 				Available Slots
 			</h2>
 
-			<ScrollArea className="max-h-[18rem] overflow-y-auto overflow-x-hidden bg-white rounded-lg bg-muted/30">
+			<ScrollArea className="max-h-[22rem] overflow-y-auto overflow-x-hidden rounded-lg bg-muted/30 space-y-4 pr-2">
 				{slots.map((slot, i) => (
 					<div
 						key={i}
-						className="flex justify-between gap-4 items-center border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300"
+						className="flex flex-wrap gap-4 items-center border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300"
 					>
-						{/* Day Select (ShadCN) */}
-						<Select
-							value={slot.days_of_week}
-							onValueChange={(value) =>
-								updateSlot(i, "days_of_week", value)
-							}
-						>
-							<SelectTrigger className="w-full">
-								<SelectValue placeholder="Select day" />
-							</SelectTrigger>
-							<SelectContent>
-								{DAYS.map((d) => (
-									<SelectItem key={d} value={d}>
-										{d.charAt(0).toUpperCase() + d.slice(1)}
-									</SelectItem>
-								))}
-							</SelectContent>
-						</Select>
-
-						{/* Start Time */}
-						<Input
-							type="time"
-							value={slot.start_time}
-							onChange={(e) =>
-								updateSlot(i, "start_time", e.target.value)
-							}
-						/>
-
-						{/* End Time */}
-						<Input
-							type="time"
-							value={slot.end_time}
-							onChange={(e) =>
-								updateSlot(i, "end_time", e.target.value)
-							}
-						/>
-
-						{/* Availability */}
-						<div className="flex items-center col-span-2">
-							<Checkbox
-								id={`available-${i}`}
-								checked={slot.is_available}
-								onCheckedChange={(checked) =>
-									updateSlot(i, "is_available", !!checked)
+						{/* Day Select */}
+						<div className="space-y-1">
+							<Label className="text-sm text-gray-700">Day</Label>
+							<Select
+								value={slot.days_of_week}
+								onValueChange={(value) =>
+									updateSlot(i, "days_of_week", value)
 								}
-							/>
-							<Label
-								htmlFor={`available-${i}`}
-								className="ml-2 text-sm text-gray-700"
 							>
-								Available
-							</Label>
+								<SelectTrigger className="w-full">
+									<SelectValue placeholder="Select day" />
+								</SelectTrigger>
+								<SelectContent>
+									{DAYS.map((d) => (
+										<SelectItem key={d} value={d}>
+											{d.charAt(0).toUpperCase() +
+												d.slice(1)}
+										</SelectItem>
+									))}
+								</SelectContent>
+							</Select>
 						</div>
 
-						{/* Remove Button */}
-						{slots.length > 1 && (
-							<Button
-								variant="destructive"
-								size="sm"
-								onClick={() => removeSlot(i)}
-								className="px-3"
-								aria-label="Remove slot"
+						{/* Start Time */}
+						<div className="space-y-1">
+							<Label className="text-sm text-gray-700">
+								Start Time
+							</Label>
+							<Input
+								type="time"
+								value={slot.start_time}
+								onChange={(e) =>
+									updateSlot(i, "start_time", e.target.value)
+								}
+							/>
+						</div>
+
+						{/* End Time */}
+						<div className="space-y-1">
+							<Label className="text-sm text-gray-700">
+								End Time
+							</Label>
+							<Input
+								type="time"
+								value={slot.end_time}
+								onChange={(e) =>
+									updateSlot(i, "end_time", e.target.value)
+								}
+							/>
+						</div>
+
+						{/* Barter Type */}
+						<div className="space-y-1">
+							<Label className="text-sm text-gray-700">
+								Barter Type
+							</Label>
+							<Select
+								value={slot.barter_type}
+								onValueChange={(value) =>
+									updateSlot(i, "barter_type", value)
+								}
 							>
-								×
-							</Button>
-						)}
+								<SelectTrigger className="w-full">
+									<SelectValue placeholder="Select type" />
+								</SelectTrigger>
+								<SelectContent>
+									<SelectItem value="trade">Trade</SelectItem>
+									<SelectItem value="semi_trade">
+										Semi Trade
+									</SelectItem>
+									<SelectItem value="paid">Paid</SelectItem>
+								</SelectContent>
+							</Select>
+						</div>
+
+						{/* Availability Checkbox + Remove */}
+						<div className="flex flex-col gap-2 items-start">
+							<div className="flex items-center gap-2 mt-6">
+								<Checkbox
+									id={`available-${i}`}
+									checked={slot.is_available}
+									onCheckedChange={(checked) =>
+										updateSlot(i, "is_available", !!checked)
+									}
+								/>
+								<Label
+									htmlFor={`available-${i}`}
+									className="text-sm text-gray-700"
+								>
+									Available
+								</Label>
+							</div>
+							{slots.length > 1 && (
+								<Button
+									variant="destructive"
+									size="sm"
+									onClick={() => removeSlot(i)}
+									className="mt-1"
+									aria-label="Remove slot"
+								>
+									×
+								</Button>
+							)}
+						</div>
 					</div>
 				))}
 			</ScrollArea>
 
-			<Button onClick={addSlot} className="mt-6 w-full" variant="modern">
+			<Button onClick={addSlot} className="mt-4 w-full" variant="modern">
 				+ Add Slot
 			</Button>
 		</div>
