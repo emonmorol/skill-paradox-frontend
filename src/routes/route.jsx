@@ -7,6 +7,9 @@ import AlertCardProps from "../layout/home/AlertCardProps";
 import UpcomingEventCardProps from "../layout/events/UpcomingEventCardProps";
 import ListingCard from "../layout/home/ListingCardProps";
 import AddSkill from "../layout/skills/AddSkill";
+import BarterRequestCardProps from "../layout/skillExchange/BarterRequestCardProps";
+import PaidSessionCardProps from "../layout/skillExchange/PaidSessionCardPros";
+import SessionHistoryCardProps from "../layout/skillExchange/SessionHistoryCardProps";
 
 const routes = createBrowserRouter([
 	{
@@ -28,6 +31,18 @@ const routes = createBrowserRouter([
 			{
 				path: "addnewskill",
 				element: <AddSkill />,
+			},
+			{
+				path: "barterrequest",
+				element: <BarterRequestCardProps />,
+			},
+			{
+				path: "paidsession",
+				element: <PaidSessionCardProps />,
+			},
+			{
+				path: "sessionhistory",
+				element: <SessionHistoryCardProps />,
 			},
 		],
 	},
