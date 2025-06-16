@@ -70,21 +70,6 @@ export default function PricingDetails({ pricing, setPricing }) {
 						{enabledSections[index] && (
 							<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 								<div className="space-y-1">
-									<Label>Session Duration</Label>
-									<Input
-										placeholder="e.g. 1 hour"
-										value={item.duration}
-										onChange={(e) =>
-											handleFieldChange(
-												index,
-												"duration",
-												e.target.value
-											)
-										}
-									/>
-								</div>
-
-								<div className="space-y-1">
 									<Label>Price</Label>
 									<Input
 										type="number"

@@ -39,7 +39,6 @@ export default function AddSkill() {
 		{
 			listing_id: 0,
 			type: "trade",
-			duration: "",
 			price: 0,
 			currency: "TK",
 			is_available: false,
@@ -47,7 +46,6 @@ export default function AddSkill() {
 		{
 			listing_id: 0,
 			type: "semi_trade",
-			duration: "",
 			price: 0,
 			currency: "TK",
 			is_available: false,
@@ -55,7 +53,6 @@ export default function AddSkill() {
 		{
 			listing_id: 0,
 			type: "paid",
-			duration: "",
 			price: 0,
 			currency: "TK",
 			is_available: false,

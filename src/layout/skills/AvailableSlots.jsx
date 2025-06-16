@@ -29,7 +29,7 @@ export default function AvailableSlots({
 				{slots.map((slot, i) => (
 					<div
 						key={i}
-						className="flex flex-wrap gap-4 items-center border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300"
+						className="w-full flex flex-wrap gap-4 items-center space-between border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300 mb-3"
 					>
 						{/* Day Select */}
 						<div className="space-y-1">
@@ -54,87 +54,65 @@ export default function AvailableSlots({
 							</Select>
 						</div>
 
-						{/* Start Time */}
+						{/* Slot Time */}
 						<div className="space-y-1">
 							<Label className="text-sm text-gray-700">
-								Start Time
-							</Label>
-							<Input
-								type="time"
-								value={slot.start_time}
-								onChange={(e) =>
-									updateSlot(i, "start_time", e.target.value)
-								}
-							/>
-						</div>
-
-						{/* End Time */}
-						<div className="space-y-1">
-							<Label className="text-sm text-gray-700">
-								End Time
-							</Label>
-							<Input
-								type="time"
-								value={slot.end_time}
-								onChange={(e) =>
-									updateSlot(i, "end_time", e.target.value)
-								}
-							/>
-						</div>
-
-						{/* Barter Type */}
-						<div className="space-y-1">
-							<Label className="text-sm text-gray-700">
-								Barter Type
+								Slot Time
 							</Label>
 							<Select
-								value={slot.barter_type}
+								value={String(slot.start_time)} // make sure it's a string
 								onValueChange={(value) =>
-									updateSlot(i, "barter_type", value)
+									updateSlot(i, "start_time", value)
 								}
 							>
 								<SelectTrigger className="w-full">
-									<SelectValue placeholder="Select type" />
+									<SelectValue placeholder="Select hour" />
 								</SelectTrigger>
 								<SelectContent>
-									<SelectItem value="trade">Trade</SelectItem>
-									<SelectItem value="semi_trade">
-										Semi Trade
-									</SelectItem>
-									<SelectItem value="paid">Paid</SelectItem>
+									{Array.from({ length: 24 }, (_, index) => {
+										const hour = index + 1;
+										return (
+											<SelectItem
+												key={hour}
+												value={String(hour)}
+											>
+												{hour}:00
+											</SelectItem>
+										);
+									})}
 								</SelectContent>
 							</Select>
 						</div>
 
 						{/* Availability Checkbox + Remove */}
-						<div className="flex flex-col gap-2 items-start">
-							<div className="flex items-center gap-2 mt-6">
-								<Checkbox
-									id={`available-${i}`}
-									checked={slot.is_available}
-									onCheckedChange={(checked) =>
-										updateSlot(i, "is_available", !!checked)
-									}
-								/>
-								<Label
-									htmlFor={`available-${i}`}
-									className="text-sm text-gray-700"
-								>
-									Available
-								</Label>
-							</div>
-							{slots.length > 1 && (
-								<Button
-									variant="destructive"
-									size="sm"
-									onClick={() => removeSlot(i)}
-									className="mt-1"
-									aria-label="Remove slot"
-								>
-									×
-								</Button>
-							)}
+						{/* <div className="flex flex-row gap-2 items-start"> */}
+						<div className="flex items-center gap-2 mt-6 p-2 rounded border border border-gray-200 ">
+							<Checkbox
+								id={`available-${i}`}
+								checked={slot.is_available}
+								onCheckedChange={(checked) =>
+									updateSlot(i, "is_available", !!checked)
+								}
+							/>
+							<Label
+								htmlFor={`available-${i}`}
+								className="text-sm text-gray-700"
+							>
+								Available
+							</Label>
 						</div>
+						{slots.length > 1 && (
+							<Button
+								variant="destructive"
+								size="sm"
+								onClick={() => removeSlot(i)}
+								className="mt-1"
+								aria-label="Remove slot"
+							>
+								×
+							</Button>
+						)}
+						{/* </div> */}
 					</div>
 				))}
 			</ScrollArea>
