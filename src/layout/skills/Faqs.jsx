@@ -3,6 +3,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Delete, Trash, Trash2 } from "lucide-react";
 
 export default function Faqs({ faqs, updateFaq, removeFaq, addFaq }) {
 	return (
@@ -15,15 +16,28 @@ export default function Faqs({ faqs, updateFaq, removeFaq, addFaq }) {
 						key={i}
 						className="space-y-3 border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300"
 					>
-						<Input
-							placeholder="Question"
-							value={faq.question}
-							onChange={(e) =>
-								updateFaq(i, "question", e.target.value)
-							}
-							className="bg-gray-50 focus:bg-white focus:ring-2 focus:ring-blue-500 transition"
-							autoComplete="off"
-						/>
+						<div className="flex items-center justify-between gap-4">
+							<Input
+								placeholder="Question"
+								value={faq.question}
+								onChange={(e) =>
+									updateFaq(i, "question", e.target.value)
+								}
+								className="bg-gray-50 focus:bg-white focus:ring-2 focus:ring-blue-500 transition"
+								autoComplete="off"
+							/>
+							{faqs.length > 1 && (
+								<Button
+									variant="destructive"
+									size="sm"
+									className="w-1/10"
+									aria-label={`Remove FAQ ${i + 1}`}
+									onClick={() => removeFaq(i)}
+								>
+									<Trash2 />
+								</Button>
+							)}
+						</div>
 						<Textarea
 							placeholder="Answer"
 							rows={3}
@@ -33,18 +47,6 @@ export default function Faqs({ faqs, updateFaq, removeFaq, addFaq }) {
 							}
 							className="bg-gray-50 focus:bg-white focus:ring-2 focus:ring-blue-500 transition"
 						/>
-
-						{faqs.length > 1 && (
-							<Button
-								variant="destructive"
-								size="sm"
-								onClick={() => removeFaq(i)}
-								aria-label={`Remove FAQ ${i + 1}`}
-								className="w-full"
-							>
-								Remove
-							</Button>
-						)}
 					</div>
 				))}
 			</ScrollArea>

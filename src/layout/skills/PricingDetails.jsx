@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import {
@@ -7,94 +10,131 @@ import {
 	SelectItem,
 	SelectValue,
 } from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Plus } from "lucide-react";
 
-const CURRENCIES = ["USD", "EUR", "BDT", "INR", "GBP"]; // example
+const CURRENCIES = ["USD", "EUR", "BDT", "INR", "GBP"];
 
 export default function PricingDetails({ pricing, setPricing }) {
+	const [enabledSections, setEnabledSections] = useState(
+		pricing.map(() => false)
+	);
+
+	const handleFieldChange = (index, field, value) => {
+		const updated = [...pricing];
+		updated[index] = {
+			...updated[index],
+			[field]: value,
+		};
+		setPricing(updated);
+	};
+
+	const toggleSection = (index) => {
+		const updated = [...enabledSections];
+		updated[index] = !updated[index];
+
+		setEnabledSections(updated);
+		handleFieldChange(index, "is_available", updated[index]);
+	};
+
 	return (
-		<div className="max-w-3xl min-h-[11rem] p-6 bg-white rounded-lg shadow-lg flex flex-col justify-between space-y-6">
-			<h2 className="text-2xl font-semibold mb-6 text-gray-800">
-				Pricing Details
-			</h2>
-			<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-				{/* Pricing Type */}
-				<div className="space-y-1.5">
-					<Label htmlFor="type">Pricing Type</Label>
-					<Select
-						value={pricing.type}
-						onValueChange={(value) =>
-							setPricing({ ...pricing, type: value })
-						}
-					>
-						<SelectTrigger id="type">
-							<SelectValue placeholder="Select pricing type" />
-						</SelectTrigger>
-						<SelectContent>
-							<SelectItem value="trade">Trade</SelectItem>
-							<SelectItem value="semi_trade">
-								Semi Trade
-							</SelectItem>
-							<SelectItem value="paid">Paid</SelectItem>
-						</SelectContent>
-					</Select>
-				</div>
-
-				{/* Duration */}
-				<div className="space-y-1.5">
-					<Label htmlFor="duration">Session Duration</Label>
-					<Input
-						id="duration"
-						placeholder="e.g. 1 hour"
-						value={pricing.duration}
-						onChange={(e) =>
-							setPricing({ ...pricing, duration: e.target.value })
-						}
-					/>
-				</div>
-
-				{/* Price – shown conditionally */}
-				{pricing.type !== "trade" && (
-					<>
-						<div className="space-y-1.5">
-							<Label htmlFor="price">Price</Label>
-							<Input
-								id="price"
-								type="number"
-								min={0}
-								placeholder="Enter price"
-								value={pricing.price}
-								onChange={(e) =>
-									setPricing({
-										...pricing,
-										price: Number(e.target.value) || 0,
-									})
-								}
-							/>
-						</div>
-
-						<div className="space-y-1.5">
-							<Label htmlFor="currency">Currency</Label>
-							<Select
-								value={pricing.currency}
-								onValueChange={(value) =>
-									setPricing({ ...pricing, currency: value })
-								}
-							>
-								<SelectTrigger id="currency">
-									<SelectValue placeholder="Select currency" />
-								</SelectTrigger>
-								<SelectContent>
-									{CURRENCIES.map((cur) => (
-										<SelectItem key={cur} value={cur}>
-											{cur}
-										</SelectItem>
-									))}
-								</SelectContent>
-							</Select>
-						</div>
-					</>
-				)}
+		<div className="max-w-5xl mx-auto space-y-6">
+			<div className="flex justify-between items-center">
+				<h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
+					Pricing Details
+				</h2>
 			</div>
+
+			{pricing.map((item, index) => (
+				<Card key={index} className="border shadow-md">
+					<CardContent className="p-6 space-y-4">
+						<div className="flex items-center gap-4">
+							<Label className="text-base text-gray-700 dark:text-gray-300">
+								Trade Type:{" "}
+								<span className="capitalize">{item.type}</span>
+							</Label>
+							<div className="flex items-center gap-2">
+								<Checkbox
+									id={`edit-${index}`}
+									checked={enabledSections[index]}
+									onCheckedChange={() => toggleSection(index)}
+								/>
+								<Label htmlFor={`edit-${index}`}>
+									Is Available? Check OK to edit
+								</Label>
+							</div>
+						</div>
+
+						{enabledSections[index] && (
+							<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+								<div className="space-y-1">
+									<Label>Price</Label>
+									<Input
+										type="number"
+										min={0}
+										placeholder="Enter price"
+										value={item.price}
+										onChange={(e) =>
+											handleFieldChange(
+												index,
+												"price",
+												Number(e.target.value)
+											)
+										}
+									/>
+								</div>
+
+								<div className="space-y-1">
+									<Label>Currency</Label>
+									<Select
+										value={item.currency}
+										onValueChange={(value) =>
+											handleFieldChange(
+												index,
+												"currency",
+												value
+											)
+										}
+									>
+										<SelectTrigger>
+											<SelectValue placeholder="Select currency" />
+										</SelectTrigger>
+										<SelectContent>
+											{CURRENCIES.map((cur) => (
+												<SelectItem
+													key={cur}
+													value={cur}
+												>
+													{cur}
+												</SelectItem>
+											))}
+										</SelectContent>
+									</Select>
+								</div>
+
+								<div className="space-y-1">
+									<Label>Number of Sessions</Label>
+									<Input
+										type="number"
+										min={1}
+										placeholder="e.g. 5"
+										value={item.sessions}
+										onChange={(e) =>
+											handleFieldChange(
+												index,
+												"sessions",
+												Number(e.target.value)
+											)
+										}
+									/>
+								</div>
+							</div>
+						)}
+					</CardContent>
+				</Card>
+			))}
 		</div>
 	);
 }
