@@ -1,7 +1,7 @@
 // components/ListingSection/ListingCardProps.jsx
 
 import React from "react";
-import ListingCard from "../../Cards/ListingCard";
+import ListingCard from "../../cards/ListingCard"; // Adjust the path if needed
 
 function ListingCardProps() {
 	const listings = [
