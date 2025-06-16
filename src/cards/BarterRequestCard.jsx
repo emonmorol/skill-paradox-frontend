@@ -271,7 +271,7 @@ export default function BarterRequestCard({
 				</div>
 			</CardContent>
 
-			<style jsx>{`
+			{/* <style jsx>{`
 				.barter-card {
 					opacity: 0;
 					transform: translateY(20px);
@@ -287,7 +287,7 @@ export default function BarterRequestCard({
 					-webkit-box-orient: vertical;
 					overflow: hidden;
 				}
-			`}</style>
+			`}</style> */}
 		</Card>
 	);
 }
