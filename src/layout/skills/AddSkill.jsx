@@ -9,6 +9,9 @@ import Faqs from "./Faqs";
 import AvailableSlots from "./AvailableSlots";
 import { useState } from "react";
 import SkillSelector from "./SkillSelector";
+import axiosInstance from "../../utils/axiosInstance";
+import Swal from "sweetalert2";
+import { useAuth } from "../../context/AuthContext";
 
 const DAYS = [
 	"monday",
@@ -22,9 +25,11 @@ const DAYS = [
 
 export default function AddSkill() {
 	const [step, setStep] = useState(0);
+	const { user } = useAuth();
+	const [skillId, setSkillId] = useState(0);
 
 	const [listing, setListing] = useState({
-		user_id: 1,
+		user_id: user?.id,
 		skill_id: 0,
 		title: "",
 		description: "",
@@ -37,24 +42,24 @@ export default function AddSkill() {
 
 	const [pricing, setPricing] = useState([
 		{
-			listing_id: 0,
 			type: "trade",
+			credit_hour: 0,
 			price: 0,
-			currency: "TK",
+			currency: "USD",
 			is_available: false,
 		},
 		{
-			listing_id: 0,
 			type: "semi_trade",
+			credit_hour: 0,
 			price: 0,
-			currency: "TK",
+			currency: "USD",
 			is_available: false,
 		},
 		{
-			listing_id: 0,
 			type: "paid",
+			credit_hour: 0,
 			price: 0,
-			currency: "TK",
+			currency: "USD",
 			is_available: false,
 		},
 	]);
@@ -63,19 +68,15 @@ export default function AddSkill() {
 		{ pricing_type: "", outcome: "" },
 	]);
 	const [faqs, setFaqs] = useState([
-		{ listing_id: 1, question: "", answer: "", found_helpful: 0 },
+		{ question: "", answer: "", found_helpful: 0 },
 	]);
 	const [slots, setSlots] = useState([
 		{
 			days_of_week: "monday",
-			start_time: "",
-			end_time: "",
-			barter_type: "",
+			slot_time: "",
 			is_available: false,
 		},
 	]);
-
-	const [skillId, setSkillId] = useState(0);
 
 	function nextStep() {
 		if (step < 5) setStep(step + 1);
@@ -98,10 +99,7 @@ export default function AddSkill() {
 	}
 
 	function addFaq() {
-		setFaqs([
-			{ listing_id: 1, question: "", answer: "", found_helpful: 0 },
-			...faqs,
-		]);
+		setFaqs([{ question: "", answer: "", found_helpful: 0 }, ...faqs]);
 	}
 	function updateFaq(idx, field, val) {
 		const newFaqs = [...faqs];
@@ -116,9 +114,7 @@ export default function AddSkill() {
 		setSlots([
 			{
 				days_of_week: "monday",
-				start_time: "",
-				end_time: "",
-				barter_type: "",
+				slot_time: "",
 				is_available: false,
 			},
 			...slots,
@@ -134,9 +130,8 @@ export default function AddSkill() {
 	}
 
 	function canGoNext() {
-		if (skillId <= 0) return false;
+		if (step <= 0) return false;
 		if (step === 1) {
-			console.log("Listing:", listing);
 			return (
 				(listing?.title ?? "").trim() !== "" &&
 				(listing?.description ?? "").trim() !== ""
@@ -144,13 +139,10 @@ export default function AddSkill() {
 		}
 
 		if (step === 2) {
-			console.log("Pricing:", pricing);
-
 			pricing.map((item) => {
 				if (item.is_available) {
 					return (
-						item.duration.trim() !== "" &&
-						item.price > 0 &&
+						item.credit_hour !== 0 &&
 						(item.type === "paid"
 							? item.currency.trim() !== ""
 							: true)
@@ -162,11 +154,37 @@ export default function AddSkill() {
 		return true;
 	}
 
-	function handleSubmit() {
-		const payload = { listing, pricing, outcomes, faqs, slots };
-		console.log("Submitting data:", payload);
-		alert("Submitted! Check console.");
-	}
+	const handleSubmit = async () => {
+		listing.skill_id = skillId;
+
+		const payload = {
+			listing: listing,
+			pricing: pricing,
+			outcomes: outcomes,
+			faqs: faqs,
+			slots: slots,
+		};
+
+		try {
+			await axiosInstance.post(
+				"/listings/create-listing",
+				payload
+			);
+			Swal.fire({
+				title: "Created!",
+				text: "Listing Created Successfully",
+				icon: "success",
+				confirmButtonText: "Alhamdulillah",
+			});
+		} catch (error) {
+			Swal.fire({
+				title: "Error!",
+				text: error?.message,
+				icon: "error",
+				confirmButtonText: "ok",
+			});
+		}
+	};
 
 	return (
 		<div className="">

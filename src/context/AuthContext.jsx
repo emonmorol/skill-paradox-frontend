@@ -12,7 +12,6 @@ export const AuthProvider = ({ children }) => {
 			email,
 			password,
 		});
-		console.log(res.data.data);
 		const { accessToken, user } = res.data.data;
 		localStorage.setItem("token", accessToken);
 		setUser(user);
@@ -32,7 +31,6 @@ export const AuthProvider = ({ children }) => {
 
 		try {
 			const res = await axiosInstance.get("/users/me");
-			console.log("Response for me - ", res.data.data[0]);
 			setUser(res.data.data[0]);
 		} catch (err) {
 			console.log(err);

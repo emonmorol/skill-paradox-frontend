@@ -60,9 +60,9 @@ export default function AvailableSlots({
 								Slot Time
 							</Label>
 							<Select
-								value={String(slot.start_time)} // make sure it's a string
+								value={String(slot.slot_time)}
 								onValueChange={(value) =>
-									updateSlot(i, "start_time", value)
+									updateSlot(i, "slot_time", value)
 								}
 							>
 								<SelectTrigger className="w-full">
