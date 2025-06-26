@@ -96,6 +96,7 @@ function ListingCardProps() {
 			{listings.map((listing) => (
 				<ListingCard
 					key={listing.id}
+					id={listing.id}
 					title={listing.title}
 					description={listing.description}
 					imageUrl={listing.banner}

@@ -10,21 +10,25 @@ import {
 import { Calendar } from "@/components/ui/calendar";
 import { format } from "date-fns";
 import { toast } from "sonner";
+import SlotDialog from "../../components/custom/SlotDialog";
+import SlotButton from "../../components/custom/SlotButton";
 
-export default function ScheduleBuilder() {
+export default function MyScheduleProps() {
 	const [selectedDate, setSelectedDate] = useState(null);
+	const [dialogOpen, setDialogOpen] = useState(false);
+	const [currentSlot, setCurrentSlot] = useState(null);
 
 	const handleSlotClick = (slotNumber) => {
-		toast.warning(`Slot ${slotNumber} clicked`);
+		setCurrentSlot(slotNumber);
+		setDialogOpen(true);
 	};
 
 	return (
 		<div className="p-6 space-y-6 max-w-4xl mx-auto">
-			{/* Header + Date Button */}
+			{/* Header + Date Picker */}
 			<div className="space-y-2 text-center">
 				<h2 className="text-2xl font-bold">Schedule Your Session</h2>
 
-				{/* Show selected date + day if selected */}
 				{selectedDate && (
 					<p className="text-lg text-muted-foreground">
 						Selected:{" "}
@@ -53,19 +57,23 @@ export default function ScheduleBuilder() {
 				</div>
 			</div>
 
-			{/* 24 Time Slots */}
+			{/* Slots Grid */}
 			<div className="grid grid-cols-6 gap-4">
 				{Array.from({ length: 24 }, (_, i) => (
-					<Button
+					<SlotButton
 						key={i}
-						variant="outline"
-						className="h-16"
-						onClick={() => handleSlotClick(i + 1)}
-					>
-						Slot {i + 1}
-					</Button>
+						slotNumber={i + 1}
+						onClick={handleSlotClick}
+					/>
 				))}
 			</div>
+
+			{/* Dialog */}
+			<SlotDialog
+				open={dialogOpen}
+				onClose={setDialogOpen}
+				slotNumber={currentSlot}
+			/>
 		</div>
 	);
 }

@@ -1,13 +1,13 @@
-// components/TrendingSkillCard.jsx
-
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Star, Flame } from "lucide-react";
 
-export default function ListingCard(props) {
+export default function TrendingSkillCard(props) {
 	const {
+		id,
 		title,
 		description,
 		imageUrl,
@@ -17,8 +17,10 @@ export default function ListingCard(props) {
 		contributor,
 	} = props;
 
+	const navigate = useNavigate();
+
 	return (
-		<Card className="w-full max-w-sm rounded-2xl shadow-md hover:shadow-xl transition-shadow">
+		<Card className="w-full max-w-sm rounded-2xl shadow-md hover:shadow-xl transition-shadow cursor-pointer">
 			<img
 				src={imageUrl}
 				alt={title}
@@ -57,7 +59,13 @@ export default function ListingCard(props) {
 						<span className="text-sm">{contributor.name}</span>
 					</div>
 				</div>
-				<Button className="w-full mt-2">Explore</Button>
+				<Button
+					className="w-full mt-2"
+					onClick={() => navigate(`/listing/${id}`)}
+					aria-label={`Explore details of ${title}`}
+				>
+					Explore
+				</Button>
 			</CardContent>
 		</Card>
 	);

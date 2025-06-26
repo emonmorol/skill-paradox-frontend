@@ -11,6 +11,8 @@ import PaidSessionCardProps from "../layout/skillExchange/PaidSessionCardPros";
 import SessionHistoryCardProps from "../layout/skillExchange/SessionHistoryCardProps";
 import AlertCardProps from "../layout/home/AlertCardProps";
 import MyScheduleProps from "../layout/bookings/MyScheduleProps";
+import ListingDetails from "../layout/home/ListingDetails";
+import CheckoutPage from "../pages/CheckoutPage";
 
 const routes = createBrowserRouter([
 	{
@@ -21,7 +23,6 @@ const routes = createBrowserRouter([
 				index: true,
 				element: <ListingCard />,
 			},
-			
 			{
 				path: "offered",
 				element: <UpcomingEventCardProps />,
@@ -50,6 +51,14 @@ const routes = createBrowserRouter([
 				path: "test",
 				element: <MyScheduleProps />,
 			},
+			{
+				path: "listing/:id",
+				element: <ListingDetails />,
+			},
+			{
+				path: "/checkout", // ✅ ADD THIS
+				element: <CheckoutPage />,
+			},
 		],
 	},
 	{
@@ -61,7 +70,6 @@ const routes = createBrowserRouter([
 		path: "/register",
 		element: <Register />,
 	},
-
 ]);
 
 export default routes;
