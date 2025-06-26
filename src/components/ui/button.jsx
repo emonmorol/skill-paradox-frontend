@@ -20,7 +20,7 @@ const buttonVariants = cva(
 					"bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/90 active:scale-[0.97]",
 				ghost: "bg-transparent hover:bg-accent/60 hover:text-accent-foreground dark:hover:bg-accent/40",
 				link: "text-primary underline-offset-4 hover:underline hover:text-primary/90 active:text-primary/70",
-				modern: "mt-6 w-1/3 bg-gradient-to-r from-blue-600 to-cyan-500 transition-colors text-primary-foreground shadow-md transition duration-300 ease-in-out hover:from-cyan-500 hover:to-blue-600 hover:scale-[1.05] active:scale-95",
+				modern: "mt-6 w-1/3 bg-gradient-to-r from-blue-600 to-cyan-500 transition-colors text-primary-foreground shadow-md transition duration-300 ease-in-out hover:from-cyan-500 hover:to-blue-600 hover:scale-[1.015] active:scale-95",
 			},
 			size: {
 				default: "h-10 px-5 has-[>svg]:px-4",
