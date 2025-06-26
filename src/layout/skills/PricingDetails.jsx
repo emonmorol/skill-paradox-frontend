@@ -28,6 +28,8 @@ export default function PricingDetails({ pricing, setPricing }) {
 			...updated[index],
 			[field]: value,
 		};
+		console.log("pricing", pricing);
+
 		setPricing(updated);
 	};
 
@@ -49,10 +51,10 @@ export default function PricingDetails({ pricing, setPricing }) {
 
 			{pricing.map((item, index) => (
 				<Card key={index} className="border shadow-md">
-					<CardContent className="p-6 space-y-4">
-						<div className="flex items-center gap-4">
+					<CardContent className="p-6">
+						<div className="flex items-center justify-between gap-4">
 							<Label className="text-base text-gray-700 dark:text-gray-300">
-								Trade Type:{" "}
+								{/* Trade Type:{" "} */}
 								<span className="capitalize">{item.type}</span>
 							</Label>
 							<div className="flex items-center gap-2">
@@ -68,14 +70,15 @@ export default function PricingDetails({ pricing, setPricing }) {
 						</div>
 
 						{enabledSections[index] && (
-							<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+							<div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
 								<div className="space-y-1">
 									<Label>Price</Label>
 									<Input
 										type="number"
 										min={0}
-										placeholder="Enter price"
+										placeholder="Enter price per credit hour"
 										value={item.price}
+										disabled={index === 0}
 										onChange={(e) =>
 											handleFieldChange(
 												index,
@@ -120,11 +123,11 @@ export default function PricingDetails({ pricing, setPricing }) {
 										type="number"
 										min={1}
 										placeholder="e.g. 5"
-										value={item.sessions}
+										value={item.credit_hour}
 										onChange={(e) =>
 											handleFieldChange(
 												index,
-												"sessions",
+												"credit_hour",
 												Number(e.target.value)
 											)
 										}

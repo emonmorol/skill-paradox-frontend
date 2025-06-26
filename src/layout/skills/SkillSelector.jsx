@@ -16,12 +16,15 @@ import {
 import { Button } from "@/components/ui/button";
 import { ChevronsUpDown, Check, PlusCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import axiosInstance from "../../utils/axiosInstance";
 
 function SkillSelector({ setStep, setSkillId, listing }) {
 	const [selectedCategory, setSelectedCategory] = useState(null);
 	const [selectedSkill, setSelectedSkill] = useState(null);
 	const [allCategories, setAllCategories] = useState([]);
-	const [skillsForCategory, setSkillsForCategory] = useState([]);
+	const [allSkills, setAllSkills] = useState([]);
+	const [filteredSkills, setFilteredSkills] = useState([]);
+	const [isCreated, setIsCreated] = useState(false);
 
 	const [catInput, setCatInput] = useState("");
 	const [skillInput, setSkillInput] = useState("");
@@ -29,52 +32,78 @@ function SkillSelector({ setStep, setSkillId, listing }) {
 	const [openSkill, setOpenSkill] = useState(false);
 
 	useEffect(() => {
-		// Replace with real API call
-		setAllCategories([
-			{ id: 1, name: "Programming" },
-			{ id: 2, name: "Music" },
-		]);
+		const fetchData = async () => {
+			try {
+				const [catRes, skillRes] = await Promise.all([
+					axiosInstance.get("/skills/categories"),
+					axiosInstance.get("/skills"),
+				]);
+
+				setAllCategories(catRes.data.data); // Ex: [{ category: "Programming", skill_count: 5 }, ...]
+				setAllSkills(skillRes.data.data); // Ex: [{ id, name, category }, ...]
+			} catch (error) {
+				console.error("Error loading skill data:", error);
+			}
+		};
+
+		fetchData();
 	}, []);
 
 	useEffect(() => {
 		if (selectedCategory) {
-			// Replace with real API call
-			setSkillsForCategory([
-				{ id: 1, name: "JavaScript", category: selectedCategory.name },
-				{ id: 2, name: "Python", category: selectedCategory.name },
-			]);
+			const filtered = allSkills.filter(
+				(skill) => skill.category === selectedCategory.category
+			);
+			setFilteredSkills(filtered);
 		} else {
-			setSkillsForCategory([]);
+			setFilteredSkills([]);
 		}
-	}, [selectedCategory]);
+	}, [selectedCategory, allSkills]);
 
 	const handleCategoryCreate = (name) => {
 		const newCategory = {
-			id: Date.now(),
-			name,
+			category: name,
+			skill_count: 1,
 		};
+		setIsCreated(true);
 		setAllCategories((prev) => [...prev, newCategory]);
 		setSelectedCategory(newCategory);
 		setCatInput("");
 		setOpenCat(false);
 	};
 
-	const handleSkillCreate = (name) => {
+	const handleSkillCreate = async (name) => {
 		const newSkill = {
-			id: Date.now(),
 			name,
-			category_id: selectedCategory.id,
+			category: selectedCategory.category,
 		};
-		setSkillsForCategory((prev) => [...prev, newSkill]);
+		setIsCreated(true);
+		setAllSkills((prev) => [...prev, newSkill]);
 		setSelectedSkill(newSkill);
 		setSkillInput("");
 		setOpenSkill(false);
 	};
 
-	const onEnterHandler = () => {
-		setStep(1);
-		setSkillId(selectedSkill.id);
-		listing.skill_id = selectedSkill.id;
+	const onEnterHandler = async () => {
+		try {
+			if (isCreated) {
+				const res = await axiosInstance.post("/skills/create-skill", {
+					name: selectedSkill?.name,
+					category: selectedSkill?.category,
+				});
+				setSelectedSkill(res.data.data);
+				setSkillId(res.data.data.id);
+				listing.skill_id = res.data.data.id;
+			} else {
+				setSelectedSkill(selectedSkill);
+				setSkillId(selectedSkill.id);
+				listing.skill_id = selectedSkill.id;
+			}
+			setIsCreated(false);
+			setStep(1);
+		} catch (err) {
+			console.log(err);
+		}
 	};
 
 	return (
@@ -91,7 +120,7 @@ function SkillSelector({ setStep, setSkillId, listing }) {
 							role="combobox"
 							className="w-full justify-between"
 						>
-							{selectedCategory?.name ??
+							{selectedCategory?.category ??
 								"Select or create category"}
 							<ChevronsUpDown className="ml-2 h-4 w-4 opacity-50" />
 						</Button>
@@ -118,8 +147,8 @@ function SkillSelector({ setStep, setSkillId, listing }) {
 							<CommandGroup>
 								{allCategories.map((cat) => (
 									<CommandItem
-										key={cat.id}
-										value={cat.name}
+										key={cat.category}
+										value={cat.category}
 										onSelect={() => {
 											setSelectedCategory(cat);
 											setSelectedSkill(null); // reset skill when category changes
@@ -134,7 +163,7 @@ function SkillSelector({ setStep, setSkillId, listing }) {
 													: "opacity-0"
 											)}
 										/>
-										{cat.name}
+										{cat.category}
 									</CommandItem>
 								))}
 							</CommandGroup>
@@ -181,7 +210,7 @@ function SkillSelector({ setStep, setSkillId, listing }) {
 									</div>
 								</CommandEmpty>
 								<CommandGroup>
-									{skillsForCategory.map((skill) => (
+									{filteredSkills.map((skill) => (
 										<CommandItem
 											key={skill.id}
 											value={skill.name}

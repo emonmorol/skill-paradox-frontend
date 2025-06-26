@@ -13,15 +13,25 @@ import AlertCardProps from "../layout/home/AlertCardProps";
 import MyScheduleProps from "../layout/bookings/MyScheduleProps";
 import ListingDetails from "../layout/home/ListingDetails";
 import CheckoutPage from "../pages/CheckoutPage";
+import PrivateRoute from "../components/custom/PrivateRoute";
+import { LoadingSkeleton } from "../components/custom/LoadingSkeleton";
 
 const routes = createBrowserRouter([
 	{
 		path: "/",
-		element: <Home />,
+		element: (
+			<PrivateRoute>
+				<Home />
+			</PrivateRoute>
+		),
 		children: [
 			{
 				index: true,
 				element: <ListingCard />,
+			},
+			{
+				path: "test",
+				element: <LoadingSkeleton />,
 			},
 			{
 				path: "offered",

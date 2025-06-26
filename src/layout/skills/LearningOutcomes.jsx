@@ -47,11 +47,11 @@ export default function LearningOutcomes({
 
 								<div className="flex items-start gap-3">
 									<Select
-										value={o.barterType}
+										value={o.pricing_type}
 										onValueChange={(value) =>
 											updateOutcome(realIndex, {
 												...o,
-												barterType: value,
+												pricing_type: value,
 											})
 										}
 									>
