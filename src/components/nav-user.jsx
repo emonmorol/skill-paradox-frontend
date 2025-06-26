@@ -26,15 +26,15 @@ import {
 	useSidebar,
 } from "@/components/ui/sidebar";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 export function NavUser({ user }) {
 	const { isMobile } = useSidebar();
+	const { logout } = useAuth();
 	const navigate = useNavigate();
 
 	const handleLogout = () => {
-		// Clear token or auth data if needed
-		//localStorage.removeItem("token"); // optional
-		// Redirect to login
+		logout();
 		navigate("/login");
 	};
 
