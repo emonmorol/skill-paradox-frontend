@@ -47,6 +47,33 @@ export default function BarterRequestCard({
 }) {
 	const [isLoading, setIsLoading] = useState(false);
 
+	console.log({
+		id: id,
+		title: title,
+		skillName: skillName,
+		skillCategory: skillCategory,
+		proficiencyLevel: proficiencyLevel,
+		description: description,
+		date: date,
+		time: time,
+		status: status,
+		counterparty: counterparty,
+		counterpartyAvatarUrl: counterpartyAvatarUrl,
+		isIncoming: isIncoming,
+		isInPersonLearning: isInPersonLearning,
+		location: location,
+		price: price,
+		currency: currency,
+		tradeType: tradeType,
+		tags: tags,
+		onChat: onChat,
+		onViewProfile: onViewProfile,
+		onReport: onReport,
+		onAccept: onAccept,
+		onReject: onReject,
+		onCancel: onCancel,
+	});
+
 	useEffect(() => {
 		const card = document.querySelector(".barter-card");
 		if (card) {
@@ -270,24 +297,6 @@ export default function BarterRequestCard({
 					)}
 				</div>
 			</CardContent>
-
-			<style jsx>{`
-				.barter-card {
-					opacity: 0;
-					transform: translateY(20px);
-					transition: opacity 0.6s ease, transform 0.6s ease;
-				}
-				.barter-card.fade-in {
-					opacity: 1;
-					transform: translateY(0);
-				}
-				.line-clamp-3 {
-					display: -webkit-box;
-					-webkit-line-clamp: 3;
-					-webkit-box-orient: vertical;
-					overflow: hidden;
-				}
-			`}</style>
 		</Card>
 	);
 }

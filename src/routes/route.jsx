@@ -10,11 +10,17 @@ import AddSkill from "../layout/skills/AddSkill";
 import BarterRequestCardProps from "../layout/skillExchange/BarterRequestCardProps";
 import PaidSessionCardProps from "../layout/skillExchange/PaidSessionCardPros";
 import SessionHistoryCardProps from "../layout/skillExchange/SessionHistoryCardProps";
+import PrivateRoute from "../components/custom/PrivateRoute";
+import { LoadingSkeleton } from "../components/custom/LoadingSkeleton";
 
 const routes = createBrowserRouter([
 	{
 		path: "/",
-		element: <Home />,
+		element: (
+			<PrivateRoute>
+				<Home />
+			</PrivateRoute>
+		),
 		children: [
 			{
 				index: true,
@@ -22,7 +28,7 @@ const routes = createBrowserRouter([
 			},
 			{
 				path: "test",
-				element: <AlertCardProps />,
+				element: <LoadingSkeleton />,
 			},
 			{
 				path: "offered",

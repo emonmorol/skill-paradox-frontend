@@ -10,7 +10,7 @@ export default function AlertCard(props) {
 		type = "success",
 		title,
 		message,
-		timeout = 3000, // default 3 sec
+		timeout = 2000, // default 3 sec
 	} = props;
 
 	const [visible, setVisible] = useState(true);
