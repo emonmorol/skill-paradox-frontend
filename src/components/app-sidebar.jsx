@@ -25,7 +25,7 @@ import {
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
-import abupic from "@/assets/abu.jpeg";
+import avatar from "@/assets/avatar.jpg";
 import { NavProjects } from "@/components/nav-projects";
 import { NavSecondary } from "@/components/nav-secondary";
 import { NavUser } from "@/components/nav-user";
@@ -38,30 +38,20 @@ import {
 	SidebarMenuButton,
 	SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { useAuth } from "../context/AuthContext";
 
 const data = {
 	user: {
 		name: "Abu Bakar",
 		email: "abubakar@gmail.com",
-		avatar: abupic,
+		avatar: avatar,
 	},
 	navMain: [
-		{
-			title: "Dashboard",
-			icon: SquareTerminal,
-			items: [
-				{
-					title: "Overview",
-					url: "/test",
-				},
-			],
-		},
 		{
 			title: "Skills",
 			icon: WrenchIcon,
 			items: [
-				{ title: "My Offered Skills", url: "/offered" },
-				{ title: "My Needed Skills", url: "#" },
+				{ title: "My Listings", url: "/offered" },
 				{ title: "Add New Skill", url: "/addnewskill" },
 			],
 		},
@@ -70,8 +60,8 @@ const data = {
 			icon: Repeat1Icon,
 			items: [
 				{ title: "Barter Requests", url: "/barterrequest" },
-				{ title: "Paid Sessions", url: "paidsession" },
-				{ title: "Session History", url: "sessionhistory" },
+				{ title: "Paid Sessions", url: "/paidsession" },
+				{ title: "Session History", url: "/sessionhistory" },
 			],
 		},
 		{
@@ -152,18 +142,6 @@ const data = {
 			],
 		},
 	],
-	navSecondary: [
-		{
-			title: "Support",
-			url: "#",
-			icon: LifeBuoy,
-		},
-		{
-			title: "Feedback",
-			url: "#",
-			icon: Send,
-		},
-	],
 	projects: [
 		{
 			name: "Home",
@@ -175,6 +153,11 @@ const data = {
 };
 
 export function AppSidebar({ ...props }) {
+	const { user } = useAuth();
+	data.user = {
+		name: user.name,
+		email: user.email,
+	};
 	return (
 		<Sidebar
 			className="top-(--header-height) h-[calc(100svh-var(--header-height))]!"
@@ -204,7 +187,6 @@ export function AppSidebar({ ...props }) {
 			<SidebarContent>
 				<NavProjects projects={data.projects} />
 				<NavMain items={data.navMain} />
-				<NavSecondary items={data.navSecondary} className="mt-auto" />
 			</SidebarContent>
 			<SidebarFooter>
 				<NavUser user={data.user} />

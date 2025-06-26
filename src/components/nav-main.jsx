@@ -23,7 +23,6 @@ import { NavLink } from "react-router-dom";
 export function NavMain({ items }) {
 	return (
 		<SidebarGroup>
-			<SidebarGroupLabel>Platform</SidebarGroupLabel>
 			<SidebarMenu>
 				{items.map((item) => (
 					<Collapsible key={item.title} asChild>
