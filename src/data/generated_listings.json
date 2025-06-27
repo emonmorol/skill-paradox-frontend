@@ -1,0 +1,3997 @@
+[
+	{
+		"listing": {
+			"user_id": 18,
+			"skill_id": 28,
+			"title": "Crash Course: Skill 28 Essentials",
+			"description": "A hands-on approach to become proficient in Skill 28.",
+			"proficiency_level": "intermediate",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": false,
+			"location": "Dhaka, Bangladesh",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 54,
+				"price": 18.69,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 81,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 36,
+				"price": 4.73,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "What if I miss a session?",
+				"answer": "Sessions are recorded for later access.",
+				"found_helpful": 3
+			},
+			{
+				"question": "Will I get a certificate?",
+				"answer": "Yes, upon completion.",
+				"found_helpful": 6
+			},
+			{
+				"question": "How long is the course?",
+				"answer": "The course spans over several weeks.",
+				"found_helpful": 11
+			},
+			{
+				"question": "Is the course mobile-friendly?",
+				"answer": "Yes, compatible with all devices.",
+				"found_helpful": 11
+			},
+			{
+				"question": "Do I need prior experience?",
+				"answer": "No, all levels are welcome.",
+				"found_helpful": 9
+			},
+			{
+				"question": "Is there any live support?",
+				"answer": "Yes, mentors are available to guide you.",
+				"found_helpful": 14
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Be able to apply Skill 28 in job scenarios.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 28.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 28.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 28.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 28.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 28.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 28.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 28.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 28.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 28.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 28.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "9",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "12",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "6",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "6",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "6",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "6",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "1",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "7",
+				"is_available": true
+			}
+		]
+	},
+	{
+		"listing": {
+			"user_id": 19,
+			"skill_id": 25,
+			"title": "Crash Course: Skill 25 Essentials",
+			"description": "Interactive sessions to master Skill 25 step by step.",
+			"proficiency_level": "intermediate",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": false,
+			"location": "Virtual",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 47,
+				"price": 9.7,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 66,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 52,
+				"price": 4.53,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "Are there any assignments?",
+				"answer": "Yes, you'll be assessed regularly.",
+				"found_helpful": 1
+			},
+			{
+				"question": "What if I miss a session?",
+				"answer": "Sessions are recorded for later access.",
+				"found_helpful": 14
+			},
+			{
+				"question": "Will I work on projects?",
+				"answer": "Yes, build real-world projects.",
+				"found_helpful": 11
+			},
+			{
+				"question": "Is the course mobile-friendly?",
+				"answer": "Yes, compatible with all devices.",
+				"found_helpful": 12
+			},
+			{
+				"question": "How long is the course?",
+				"answer": "The course spans over several weeks.",
+				"found_helpful": 11
+			},
+			{
+				"question": "Can I access content after the course ends?",
+				"answer": "You get lifetime access to content.",
+				"found_helpful": 11
+			},
+			{
+				"question": "Do I need prior experience?",
+				"answer": "No, all levels are welcome.",
+				"found_helpful": 2
+			},
+			{
+				"question": "Is there any live support?",
+				"answer": "Yes, mentors are available to guide you.",
+				"found_helpful": 15
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Build real-world projects using Skill 25.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 25.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 25.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 25 tools.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 25 in job scenarios.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 25 tools.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 25 in job scenarios.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 25 tools.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 25.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "thursday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "7",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "15",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "10",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "7",
+				"is_available": true
+			}
+		]
+	},
+	{
+		"listing": {
+			"user_id": 18,
+			"skill_id": 27,
+			"title": "Mastering Skill 27",
+			"description": "From basics to advanced topics, understand Skill 27 inside out.",
+			"proficiency_level": "intermediate",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": false,
+			"location": "Dhaka, Bangladesh",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 39,
+				"price": 14.21,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 72,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 57,
+				"price": 6.76,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "Can I access content after the course ends?",
+				"answer": "You get lifetime access to content.",
+				"found_helpful": 10
+			},
+			{
+				"question": "Is this self-paced?",
+				"answer": "Yes, learn at your own pace.",
+				"found_helpful": 4
+			},
+			{
+				"question": "Is the course mobile-friendly?",
+				"answer": "Yes, compatible with all devices.",
+				"found_helpful": 14
+			},
+			{
+				"question": "Do I need prior experience?",
+				"answer": "No, all levels are welcome.",
+				"found_helpful": 13
+			},
+			{
+				"question": "How long is the course?",
+				"answer": "The course spans over several weeks.",
+				"found_helpful": 14
+			},
+			{
+				"question": "What if I miss a session?",
+				"answer": "Sessions are recorded for later access.",
+				"found_helpful": 10
+			},
+			{
+				"question": "Is there any live support?",
+				"answer": "Yes, mentors are available to guide you.",
+				"found_helpful": 14
+			},
+			{
+				"question": "Will I work on projects?",
+				"answer": "Yes, build real-world projects.",
+				"found_helpful": 5
+			},
+			{
+				"question": "Will I get a certificate?",
+				"answer": "Yes, upon completion.",
+				"found_helpful": 14
+			},
+			{
+				"question": "Are there any assignments?",
+				"answer": "Yes, you'll be assessed regularly.",
+				"found_helpful": 11
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Be able to apply Skill 27 in job scenarios.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 27 tools.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 27 tools.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 27.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 27 tools.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 27 in job scenarios.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 27.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 27.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 27 in job scenarios.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 27.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 27 in job scenarios.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "friday",
+				"slot_time": "7",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "1",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "10",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "1",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "7",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "9",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "3",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "15",
+				"is_available": true
+			}
+		]
+	},
+	{
+		"listing": {
+			"user_id": 19,
+			"skill_id": 16,
+			"title": "Crash Course: Skill 16 Essentials",
+			"description": "A hands-on approach to become proficient in Skill 16.",
+			"proficiency_level": "beginner",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": false,
+			"location": "Dhaka, Bangladesh",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 59,
+				"price": 6.55,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 45,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 60,
+				"price": 4.97,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "Are there any assignments?",
+				"answer": "Yes, you'll be assessed regularly.",
+				"found_helpful": 10
+			},
+			{
+				"question": "What if I miss a session?",
+				"answer": "Sessions are recorded for later access.",
+				"found_helpful": 9
+			},
+			{
+				"question": "Can I access content after the course ends?",
+				"answer": "You get lifetime access to content.",
+				"found_helpful": 8
+			},
+			{
+				"question": "Will I work on projects?",
+				"answer": "Yes, build real-world projects.",
+				"found_helpful": 11
+			},
+			{
+				"question": "How long is the course?",
+				"answer": "The course spans over several weeks.",
+				"found_helpful": 15
+			},
+			{
+				"question": "Will I get a certificate?",
+				"answer": "Yes, upon completion.",
+				"found_helpful": 8
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Build real-world projects using Skill 16.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 16.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 16.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 16 tools.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 16.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 16.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 16 tools.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 16 tools.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 16.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 16.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 16.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "1",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "13",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "1",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "3",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "10",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "13",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "9",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "9",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "12",
+				"is_available": true
+			}
+		]
+	},
+	{
+		"listing": {
+			"user_id": 17,
+			"skill_id": 20,
+			"title": "Complete Guide to Skill 20",
+			"description": "Designed for those who want to learn Skill 20 practically.",
+			"proficiency_level": "intermediate",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": true,
+			"location": "Dhaka, Bangladesh",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 33,
+				"price": 15.18,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 56,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 61,
+				"price": 11.23,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "What if I miss a session?",
+				"answer": "Sessions are recorded for later access.",
+				"found_helpful": 7
+			},
+			{
+				"question": "Can I access content after the course ends?",
+				"answer": "You get lifetime access to content.",
+				"found_helpful": 10
+			},
+			{
+				"question": "Is there any live support?",
+				"answer": "Yes, mentors are available to guide you.",
+				"found_helpful": 10
+			},
+			{
+				"question": "How long is the course?",
+				"answer": "The course spans over several weeks.",
+				"found_helpful": 11
+			},
+			{
+				"question": "Will I get a certificate?",
+				"answer": "Yes, upon completion.",
+				"found_helpful": 5
+			},
+			{
+				"question": "Do I need prior experience?",
+				"answer": "No, all levels are welcome.",
+				"found_helpful": 8
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Develop problem-solving skills in Skill 20.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 20.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 20.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 20 tools.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 20.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 20.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 20 tools.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 20.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 20 in job scenarios.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 20.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 20.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "monday",
+				"slot_time": "9",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "6",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "7",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "13",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "1",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "10",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "9",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "2",
+				"is_available": true
+			}
+		]
+	},
+	{
+		"listing": {
+			"user_id": 19,
+			"skill_id": 15,
+			"title": "Complete Guide to Skill 15",
+			"description": "A hands-on approach to become proficient in Skill 15.",
+			"proficiency_level": "intermediate",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": false,
+			"location": "Virtual",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 45,
+				"price": 10.92,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 35,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 48,
+				"price": 6.45,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "Do I need prior experience?",
+				"answer": "No, all levels are welcome.",
+				"found_helpful": 15
+			},
+			{
+				"question": "What if I miss a session?",
+				"answer": "Sessions are recorded for later access.",
+				"found_helpful": 11
+			},
+			{
+				"question": "Is the course mobile-friendly?",
+				"answer": "Yes, compatible with all devices.",
+				"found_helpful": 9
+			},
+			{
+				"question": "Is there any live support?",
+				"answer": "Yes, mentors are available to guide you.",
+				"found_helpful": 2
+			},
+			{
+				"question": "Is this self-paced?",
+				"answer": "Yes, learn at your own pace.",
+				"found_helpful": 10
+			},
+			{
+				"question": "Are there any assignments?",
+				"answer": "Yes, you'll be assessed regularly.",
+				"found_helpful": 12
+			},
+			{
+				"question": "Can I access content after the course ends?",
+				"answer": "You get lifetime access to content.",
+				"found_helpful": 3
+			},
+			{
+				"question": "How long is the course?",
+				"answer": "The course spans over several weeks.",
+				"found_helpful": 6
+			},
+			{
+				"question": "Will I get a certificate?",
+				"answer": "Yes, upon completion.",
+				"found_helpful": 14
+			},
+			{
+				"question": "Will I work on projects?",
+				"answer": "Yes, build real-world projects.",
+				"found_helpful": 3
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Develop problem-solving skills in Skill 15.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 15.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Be able to apply Skill 15 in job scenarios.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 15 tools.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 15 in job scenarios.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 15.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 15 tools.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 15.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 15 in job scenarios.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 15.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 15.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "3",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "7",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "15",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "9",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "13",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "15",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "11",
+				"is_available": true
+			}
+		]
+	},
+	{
+		"listing": {
+			"user_id": 17,
+			"skill_id": 21,
+			"title": "Crash Course: Skill 21 Essentials",
+			"description": "Structured curriculum to gain deep knowledge in Skill 21.",
+			"proficiency_level": "intermediate",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": false,
+			"location": "Virtual",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 38,
+				"price": 19.04,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 23,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 69,
+				"price": 7.24,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "Will I get a certificate?",
+				"answer": "Yes, upon completion.",
+				"found_helpful": 10
+			},
+			{
+				"question": "What if I miss a session?",
+				"answer": "Sessions are recorded for later access.",
+				"found_helpful": 15
+			},
+			{
+				"question": "Do I need prior experience?",
+				"answer": "No, all levels are welcome.",
+				"found_helpful": 3
+			},
+			{
+				"question": "Is the course mobile-friendly?",
+				"answer": "Yes, compatible with all devices.",
+				"found_helpful": 11
+			},
+			{
+				"question": "How long is the course?",
+				"answer": "The course spans over several weeks.",
+				"found_helpful": 3
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Be able to apply Skill 21 in job scenarios.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 21.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 21.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 21 tools.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 21 in job scenarios.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 21.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 21.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 21.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 21.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "friday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "3",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "6",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "3",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "12",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "12",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "3",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "13",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "3",
+				"is_available": true
+			}
+		]
+	},
+	{
+		"listing": {
+			"user_id": 17,
+			"skill_id": 18,
+			"title": "Complete Guide to Skill 18",
+			"description": "From basics to advanced topics, understand Skill 18 inside out.",
+			"proficiency_level": "expert",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": true,
+			"location": "Dhaka, Bangladesh",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 54,
+				"price": 10.84,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 35,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 52,
+				"price": 3.99,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "Is there any live support?",
+				"answer": "Yes, mentors are available to guide you.",
+				"found_helpful": 1
+			},
+			{
+				"question": "Will I get a certificate?",
+				"answer": "Yes, upon completion.",
+				"found_helpful": 2
+			},
+			{
+				"question": "What if I miss a session?",
+				"answer": "Sessions are recorded for later access.",
+				"found_helpful": 10
+			},
+			{
+				"question": "Do I need prior experience?",
+				"answer": "No, all levels are welcome.",
+				"found_helpful": 15
+			},
+			{
+				"question": "Will I work on projects?",
+				"answer": "Yes, build real-world projects.",
+				"found_helpful": 2
+			},
+			{
+				"question": "Are there any assignments?",
+				"answer": "Yes, you'll be assessed regularly.",
+				"found_helpful": 3
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Build real-world projects using Skill 18.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 18 tools.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 18.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 18.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 18.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 18 tools.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 18.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 18 in job scenarios.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 18.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 18 in job scenarios.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 18.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 18.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "friday",
+				"slot_time": "7",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "12",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "10",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "9",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "12",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "7",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "3",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "12",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "9",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "15",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "15",
+				"is_available": true
+			}
+		]
+	},
+	{
+		"listing": {
+			"user_id": 17,
+			"skill_id": 19,
+			"title": "Advanced Techniques in Skill 19",
+			"description": "Structured curriculum to gain deep knowledge in Skill 19.",
+			"proficiency_level": "intermediate",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": true,
+			"location": "Virtual",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 45,
+				"price": 19.96,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 62,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 30,
+				"price": 10.78,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "Is there any live support?",
+				"answer": "Yes, mentors are available to guide you.",
+				"found_helpful": 1
+			},
+			{
+				"question": "Is this self-paced?",
+				"answer": "Yes, learn at your own pace.",
+				"found_helpful": 5
+			},
+			{
+				"question": "Can I access content after the course ends?",
+				"answer": "You get lifetime access to content.",
+				"found_helpful": 10
+			},
+			{
+				"question": "Will I get a certificate?",
+				"answer": "Yes, upon completion.",
+				"found_helpful": 9
+			},
+			{
+				"question": "Are there any assignments?",
+				"answer": "Yes, you'll be assessed regularly.",
+				"found_helpful": 4
+			},
+			{
+				"question": "Will I work on projects?",
+				"answer": "Yes, build real-world projects.",
+				"found_helpful": 12
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Understand basic concepts of Skill 19.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 19.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 19.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Be able to apply Skill 19 in job scenarios.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 19 tools.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 19.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 19 tools.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 19 in job scenarios.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 19.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 19.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 19.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "sunday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "1",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "7",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "9",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "6",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "15",
+				"is_available": true
+			}
+		]
+	},
+	{
+		"listing": {
+			"user_id": 19,
+			"skill_id": 25,
+			"title": "Mastering Skill 25",
+			"description": "A hands-on approach to become proficient in Skill 25.",
+			"proficiency_level": "expert",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": false,
+			"location": "Dhaka, Bangladesh",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 46,
+				"price": 8.76,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 74,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 31,
+				"price": 7.77,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "Do I need prior experience?",
+				"answer": "No, all levels are welcome.",
+				"found_helpful": 8
+			},
+			{
+				"question": "How long is the course?",
+				"answer": "The course spans over several weeks.",
+				"found_helpful": 15
+			},
+			{
+				"question": "Is the course mobile-friendly?",
+				"answer": "Yes, compatible with all devices.",
+				"found_helpful": 4
+			},
+			{
+				"question": "Will I get a certificate?",
+				"answer": "Yes, upon completion.",
+				"found_helpful": 8
+			},
+			{
+				"question": "What if I miss a session?",
+				"answer": "Sessions are recorded for later access.",
+				"found_helpful": 8
+			},
+			{
+				"question": "Can I access content after the course ends?",
+				"answer": "You get lifetime access to content.",
+				"found_helpful": 15
+			},
+			{
+				"question": "Will I work on projects?",
+				"answer": "Yes, build real-world projects.",
+				"found_helpful": 10
+			},
+			{
+				"question": "Is there any live support?",
+				"answer": "Yes, mentors are available to guide you.",
+				"found_helpful": 14
+			},
+			{
+				"question": "Is this self-paced?",
+				"answer": "Yes, learn at your own pace.",
+				"found_helpful": 1
+			},
+			{
+				"question": "Are there any assignments?",
+				"answer": "Yes, you'll be assessed regularly.",
+				"found_helpful": 5
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Develop problem-solving skills in Skill 25.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Be able to apply Skill 25 in job scenarios.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 25.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 25.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 25.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 25 tools.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 25.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 25.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 25.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 25.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "thursday",
+				"slot_time": "6",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "15",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "13",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "6",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "3",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "9",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "12",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "9",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "12",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "10",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "16",
+				"is_available": true
+			}
+		]
+	},
+	{
+		"listing": {
+			"user_id": 17,
+			"skill_id": 20,
+			"title": "Advanced Techniques in Skill 20",
+			"description": "Structured curriculum to gain deep knowledge in Skill 20.",
+			"proficiency_level": "expert",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": true,
+			"location": "Dhaka, Bangladesh",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 45,
+				"price": 13.52,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 53,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 55,
+				"price": 7.71,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "Will I get a certificate?",
+				"answer": "Yes, upon completion.",
+				"found_helpful": 11
+			},
+			{
+				"question": "Can I access content after the course ends?",
+				"answer": "You get lifetime access to content.",
+				"found_helpful": 3
+			},
+			{
+				"question": "Is the course mobile-friendly?",
+				"answer": "Yes, compatible with all devices.",
+				"found_helpful": 8
+			},
+			{
+				"question": "Will I work on projects?",
+				"answer": "Yes, build real-world projects.",
+				"found_helpful": 15
+			},
+			{
+				"question": "How long is the course?",
+				"answer": "The course spans over several weeks.",
+				"found_helpful": 8
+			},
+			{
+				"question": "Do I need prior experience?",
+				"answer": "No, all levels are welcome.",
+				"found_helpful": 10
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Understand basic concepts of Skill 20.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 20.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 20.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 20.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 20 in job scenarios.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 20 tools.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 20.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 20 tools.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 20.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "friday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "15",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "1",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "7",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "7",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "13",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "15",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "1",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "12",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "10",
+				"is_available": true
+			}
+		]
+	},
+	{
+		"listing": {
+			"user_id": 19,
+			"skill_id": 17,
+			"title": "Skill 17 for Beginners",
+			"description": "Designed for those who want to learn Skill 17 practically.",
+			"proficiency_level": "intermediate",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": true,
+			"location": "Dhaka, Bangladesh",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 51,
+				"price": 16.48,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 78,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 66,
+				"price": 3.98,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "What if I miss a session?",
+				"answer": "Sessions are recorded for later access.",
+				"found_helpful": 11
+			},
+			{
+				"question": "Are there any assignments?",
+				"answer": "Yes, you'll be assessed regularly.",
+				"found_helpful": 1
+			},
+			{
+				"question": "Will I get a certificate?",
+				"answer": "Yes, upon completion.",
+				"found_helpful": 1
+			},
+			{
+				"question": "How long is the course?",
+				"answer": "The course spans over several weeks.",
+				"found_helpful": 4
+			},
+			{
+				"question": "Do I need prior experience?",
+				"answer": "No, all levels are welcome.",
+				"found_helpful": 12
+			},
+			{
+				"question": "Is the course mobile-friendly?",
+				"answer": "Yes, compatible with all devices.",
+				"found_helpful": 1
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Learn industry best practices in Skill 17.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 17.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 17.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Be able to apply Skill 17 in job scenarios.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 17.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 17.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 17.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 17.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 17.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 17 tools.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 17 tools.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "monday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "3",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "9",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "7",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "1",
+				"is_available": true
+			}
+		]
+	},
+	{
+		"listing": {
+			"user_id": 19,
+			"skill_id": 15,
+			"title": "Complete Guide to Skill 15",
+			"description": "A hands-on approach to become proficient in Skill 15.",
+			"proficiency_level": "expert",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": true,
+			"location": "Virtual",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 50,
+				"price": 16.51,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 87,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 37,
+				"price": 3.43,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "Is the course mobile-friendly?",
+				"answer": "Yes, compatible with all devices.",
+				"found_helpful": 1
+			},
+			{
+				"question": "Are there any assignments?",
+				"answer": "Yes, you'll be assessed regularly.",
+				"found_helpful": 7
+			},
+			{
+				"question": "Is there any live support?",
+				"answer": "Yes, mentors are available to guide you.",
+				"found_helpful": 2
+			},
+			{
+				"question": "Will I work on projects?",
+				"answer": "Yes, build real-world projects.",
+				"found_helpful": 4
+			},
+			{
+				"question": "How long is the course?",
+				"answer": "The course spans over several weeks.",
+				"found_helpful": 1
+			},
+			{
+				"question": "Is this self-paced?",
+				"answer": "Yes, learn at your own pace.",
+				"found_helpful": 12
+			},
+			{
+				"question": "Can I access content after the course ends?",
+				"answer": "You get lifetime access to content.",
+				"found_helpful": 12
+			},
+			{
+				"question": "Will I get a certificate?",
+				"answer": "Yes, upon completion.",
+				"found_helpful": 14
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Build real-world projects using Skill 15.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 15 tools.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Be able to apply Skill 15 in job scenarios.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Be able to apply Skill 15 in job scenarios.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 15.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 15.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 15.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 15.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 15.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 15 tools.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 15.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 15 in job scenarios.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "sunday",
+				"slot_time": "6",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "1",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "1",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "1",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "10",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "7",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "10",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "14",
+				"is_available": true
+			}
+		]
+	},
+	{
+		"listing": {
+			"user_id": 17,
+			"skill_id": 14,
+			"title": "Mastering Skill 14",
+			"description": "Interactive sessions to master Skill 14 step by step.",
+			"proficiency_level": "beginner",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": true,
+			"location": "Virtual",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 60,
+				"price": 8.37,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 58,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 73,
+				"price": 3.61,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "Do I need prior experience?",
+				"answer": "No, all levels are welcome.",
+				"found_helpful": 8
+			},
+			{
+				"question": "Are there any assignments?",
+				"answer": "Yes, you'll be assessed regularly.",
+				"found_helpful": 2
+			},
+			{
+				"question": "Will I work on projects?",
+				"answer": "Yes, build real-world projects.",
+				"found_helpful": 7
+			},
+			{
+				"question": "Is the course mobile-friendly?",
+				"answer": "Yes, compatible with all devices.",
+				"found_helpful": 13
+			},
+			{
+				"question": "What if I miss a session?",
+				"answer": "Sessions are recorded for later access.",
+				"found_helpful": 6
+			},
+			{
+				"question": "Is this self-paced?",
+				"answer": "Yes, learn at your own pace.",
+				"found_helpful": 12
+			},
+			{
+				"question": "Can I access content after the course ends?",
+				"answer": "You get lifetime access to content.",
+				"found_helpful": 14
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Develop problem-solving skills in Skill 14.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 14.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 14.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Be able to apply Skill 14 in job scenarios.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 14.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 14 in job scenarios.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 14.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 14.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 14.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 14 in job scenarios.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "friday",
+				"slot_time": "9",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "15",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "15",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "15",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "7",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "1",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "7",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "1",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "14",
+				"is_available": true
+			}
+		]
+	},
+	{
+		"listing": {
+			"user_id": 19,
+			"skill_id": 14,
+			"title": "Advanced Techniques in Skill 14",
+			"description": "Interactive sessions to master Skill 14 step by step.",
+			"proficiency_level": "expert",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": true,
+			"location": "Virtual",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 39,
+				"price": 10.29,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 59,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 74,
+				"price": 6.74,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "What if I miss a session?",
+				"answer": "Sessions are recorded for later access.",
+				"found_helpful": 3
+			},
+			{
+				"question": "Can I access content after the course ends?",
+				"answer": "You get lifetime access to content.",
+				"found_helpful": 6
+			},
+			{
+				"question": "Is this self-paced?",
+				"answer": "Yes, learn at your own pace.",
+				"found_helpful": 1
+			},
+			{
+				"question": "Is there any live support?",
+				"answer": "Yes, mentors are available to guide you.",
+				"found_helpful": 8
+			},
+			{
+				"question": "Are there any assignments?",
+				"answer": "Yes, you'll be assessed regularly.",
+				"found_helpful": 11
+			},
+			{
+				"question": "Will I get a certificate?",
+				"answer": "Yes, upon completion.",
+				"found_helpful": 4
+			},
+			{
+				"question": "How long is the course?",
+				"answer": "The course spans over several weeks.",
+				"found_helpful": 12
+			},
+			{
+				"question": "Will I work on projects?",
+				"answer": "Yes, build real-world projects.",
+				"found_helpful": 10
+			},
+			{
+				"question": "Do I need prior experience?",
+				"answer": "No, all levels are welcome.",
+				"found_helpful": 8
+			},
+			{
+				"question": "Is the course mobile-friendly?",
+				"answer": "Yes, compatible with all devices.",
+				"found_helpful": 15
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Develop problem-solving skills in Skill 14.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Be able to apply Skill 14 in job scenarios.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 14.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 14.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 14 tools.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 14.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 14.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 14 in job scenarios.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 14.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 14.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 14 tools.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "thursday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "12",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "9",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "1",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "16",
+				"is_available": true
+			}
+		]
+	},
+	{
+		"listing": {
+			"user_id": 16,
+			"skill_id": 28,
+			"title": "Complete Guide to Skill 28",
+			"description": "Interactive sessions to master Skill 28 step by step.",
+			"proficiency_level": "beginner",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": true,
+			"location": "Dhaka, Bangladesh",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 32,
+				"price": 14.52,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 25,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 50,
+				"price": 9.63,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "Will I work on projects?",
+				"answer": "Yes, build real-world projects.",
+				"found_helpful": 11
+			},
+			{
+				"question": "Is this self-paced?",
+				"answer": "Yes, learn at your own pace.",
+				"found_helpful": 1
+			},
+			{
+				"question": "Do I need prior experience?",
+				"answer": "No, all levels are welcome.",
+				"found_helpful": 1
+			},
+			{
+				"question": "Are there any assignments?",
+				"answer": "Yes, you'll be assessed regularly.",
+				"found_helpful": 6
+			},
+			{
+				"question": "Will I get a certificate?",
+				"answer": "Yes, upon completion.",
+				"found_helpful": 7
+			},
+			{
+				"question": "What if I miss a session?",
+				"answer": "Sessions are recorded for later access.",
+				"found_helpful": 3
+			},
+			{
+				"question": "Is there any live support?",
+				"answer": "Yes, mentors are available to guide you.",
+				"found_helpful": 9
+			},
+			{
+				"question": "Can I access content after the course ends?",
+				"answer": "You get lifetime access to content.",
+				"found_helpful": 14
+			},
+			{
+				"question": "How long is the course?",
+				"answer": "The course spans over several weeks.",
+				"found_helpful": 5
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Learn industry best practices in Skill 28.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 28.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 28.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 28.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 28 tools.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 28.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 28 in job scenarios.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 28.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 28.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "monday",
+				"slot_time": "13",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "1",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "1",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "7",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "12",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "15",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "10",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "12",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "15",
+				"is_available": true
+			}
+		]
+	},
+	{
+		"listing": {
+			"user_id": 20,
+			"skill_id": 17,
+			"title": "Complete Guide to Skill 17",
+			"description": "Designed for those who want to learn Skill 17 practically.",
+			"proficiency_level": "intermediate",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": false,
+			"location": "Virtual",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 45,
+				"price": 17.21,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 24,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 65,
+				"price": 5.39,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "Will I get a certificate?",
+				"answer": "Yes, upon completion.",
+				"found_helpful": 14
+			},
+			{
+				"question": "What if I miss a session?",
+				"answer": "Sessions are recorded for later access.",
+				"found_helpful": 9
+			},
+			{
+				"question": "Do I need prior experience?",
+				"answer": "No, all levels are welcome.",
+				"found_helpful": 13
+			},
+			{
+				"question": "Are there any assignments?",
+				"answer": "Yes, you'll be assessed regularly.",
+				"found_helpful": 9
+			},
+			{
+				"question": "Will I work on projects?",
+				"answer": "Yes, build real-world projects.",
+				"found_helpful": 12
+			},
+			{
+				"question": "How long is the course?",
+				"answer": "The course spans over several weeks.",
+				"found_helpful": 5
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Learn industry best practices in Skill 17.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Be able to apply Skill 17 in job scenarios.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 17 tools.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 17.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Be able to apply Skill 17 in job scenarios.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 17.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 17.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 17.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 17.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 17 in job scenarios.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "thursday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "7",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "10",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "12",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "9",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "1",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "13",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "3",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "3",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "5",
+				"is_available": true
+			}
+		]
+	},
+	{
+		"listing": {
+			"user_id": 20,
+			"skill_id": 17,
+			"title": "Complete Guide to Skill 17",
+			"description": "Structured curriculum to gain deep knowledge in Skill 17.",
+			"proficiency_level": "intermediate",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": true,
+			"location": "Virtual",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 54,
+				"price": 5.83,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 42,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 60,
+				"price": 9.86,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "Will I work on projects?",
+				"answer": "Yes, build real-world projects.",
+				"found_helpful": 8
+			},
+			{
+				"question": "What if I miss a session?",
+				"answer": "Sessions are recorded for later access.",
+				"found_helpful": 3
+			},
+			{
+				"question": "Is this self-paced?",
+				"answer": "Yes, learn at your own pace.",
+				"found_helpful": 9
+			},
+			{
+				"question": "Can I access content after the course ends?",
+				"answer": "You get lifetime access to content.",
+				"found_helpful": 3
+			},
+			{
+				"question": "Is the course mobile-friendly?",
+				"answer": "Yes, compatible with all devices.",
+				"found_helpful": 6
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Build real-world projects using Skill 17.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 17 tools.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 17.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 17.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 17.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 17.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 17.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 17 tools.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 17.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 17 in job scenarios.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "thursday",
+				"slot_time": "3",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "6",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "10",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "7",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "12",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "10",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "3",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "6",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "10",
+				"is_available": true
+			}
+		]
+	},
+	{
+		"listing": {
+			"user_id": 16,
+			"skill_id": 24,
+			"title": "Skill 24 for Beginners",
+			"description": "A hands-on approach to become proficient in Skill 24.",
+			"proficiency_level": "advanced",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": true,
+			"location": "Virtual",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 40,
+				"price": 17.56,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 39,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 68,
+				"price": 5.02,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "Will I work on projects?",
+				"answer": "Yes, build real-world projects.",
+				"found_helpful": 7
+			},
+			{
+				"question": "How long is the course?",
+				"answer": "The course spans over several weeks.",
+				"found_helpful": 5
+			},
+			{
+				"question": "Will I get a certificate?",
+				"answer": "Yes, upon completion.",
+				"found_helpful": 12
+			},
+			{
+				"question": "Are there any assignments?",
+				"answer": "Yes, you'll be assessed regularly.",
+				"found_helpful": 14
+			},
+			{
+				"question": "Is the course mobile-friendly?",
+				"answer": "Yes, compatible with all devices.",
+				"found_helpful": 7
+			},
+			{
+				"question": "Can I access content after the course ends?",
+				"answer": "You get lifetime access to content.",
+				"found_helpful": 15
+			},
+			{
+				"question": "Is this self-paced?",
+				"answer": "Yes, learn at your own pace.",
+				"found_helpful": 11
+			},
+			{
+				"question": "Do I need prior experience?",
+				"answer": "No, all levels are welcome.",
+				"found_helpful": 7
+			},
+			{
+				"question": "Is there any live support?",
+				"answer": "Yes, mentors are available to guide you.",
+				"found_helpful": 15
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Understand basic concepts of Skill 24.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 24 tools.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 24 tools.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 24.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 24.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 24.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 24 tools.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 24.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 24.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Be able to apply Skill 24 in job scenarios.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 24 tools.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "sunday",
+				"slot_time": "12",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "12",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "6",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "6",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "3",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "13",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "15",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "15",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "9",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "2",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "8",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "16",
+				"is_available": true
+			}
+		]
+	},
+	{
+		"listing": {
+			"user_id": 16,
+			"skill_id": 28,
+			"title": "Complete Guide to Skill 28",
+			"description": "Structured curriculum to gain deep knowledge in Skill 28.",
+			"proficiency_level": "advanced",
+			"banner": "https://example.com/sample_banner.jpg",
+			"is_in_person_learning": false,
+			"location": "Virtual",
+			"is_deleted": false
+		},
+		"pricing": [
+			{
+				"type": "paid",
+				"credit_hour": 37,
+				"price": 16.32,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "trade",
+				"credit_hour": 49,
+				"price": 0,
+				"currency": "USD",
+				"is_available": true
+			},
+			{
+				"type": "semi_trade",
+				"credit_hour": 69,
+				"price": 10.66,
+				"currency": "USD",
+				"is_available": true
+			}
+		],
+		"faqs": [
+			{
+				"question": "Do I need prior experience?",
+				"answer": "No, all levels are welcome.",
+				"found_helpful": 12
+			},
+			{
+				"question": "Is there any live support?",
+				"answer": "Yes, mentors are available to guide you.",
+				"found_helpful": 15
+			},
+			{
+				"question": "Is this self-paced?",
+				"answer": "Yes, learn at your own pace.",
+				"found_helpful": 15
+			},
+			{
+				"question": "Will I get a certificate?",
+				"answer": "Yes, upon completion.",
+				"found_helpful": 15
+			},
+			{
+				"question": "Will I work on projects?",
+				"answer": "Yes, build real-world projects.",
+				"found_helpful": 3
+			},
+			{
+				"question": "Are there any assignments?",
+				"answer": "Yes, you'll be assessed regularly.",
+				"found_helpful": 9
+			}
+		],
+		"outcomes": [
+			{
+				"outcome": "Build real-world projects using Skill 28.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 28 tools.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 28.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Be able to apply Skill 28 in job scenarios.",
+				"pricing_type": "paid"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 28.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Develop problem-solving skills in Skill 28.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Build real-world projects using Skill 28.",
+				"pricing_type": "trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 28.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Understand basic concepts of Skill 28.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Learn industry best practices in Skill 28.",
+				"pricing_type": "semi_trade"
+			},
+			{
+				"outcome": "Gain practical experience with Skill 28 tools.",
+				"pricing_type": "semi_trade"
+			}
+		],
+		"slots": [
+			{
+				"days_of_week": "saturday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "9",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "15",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "15",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "15",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "14",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "11",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "10",
+				"is_available": true
+			},
+			{
+				"days_of_week": "saturday",
+				"slot_time": "7",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "4",
+				"is_available": true
+			},
+			{
+				"days_of_week": "friday",
+				"slot_time": "9",
+				"is_available": true
+			},
+			{
+				"days_of_week": "sunday",
+				"slot_time": "5",
+				"is_available": true
+			},
+			{
+				"days_of_week": "tuesday",
+				"slot_time": "10",
+				"is_available": true
+			},
+			{
+				"days_of_week": "monday",
+				"slot_time": "16",
+				"is_available": true
+			},
+			{
+				"days_of_week": "wednesday",
+				"slot_time": "12",
+				"is_available": true
+			},
+			{
+				"days_of_week": "thursday",
+				"slot_time": "2",
+				"is_available": true
+			}
+		]
+	}
+]
