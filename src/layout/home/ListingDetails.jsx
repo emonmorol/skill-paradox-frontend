@@ -1,145 +1,161 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Star, Users } from "lucide-react";
+import axiosInstance from "@/utils/axiosInstance";
 import { motion } from "framer-motion";
 
-const data = {
-	listing: {
-		id: 1,
-		user_id: 1,
-		skill_id: 2,
-		title: "Web Development",
-		description:
-			"Build modern, responsive websites with HTML, CSS, and JS.",
-		proficiency_level: "beginner",
-		banner: "https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?q=80&w=1974&auto=format&fit=crop",
-		is_deleted: false,
-		is_in_person_learning: true,
-		location: "Dhaka, Bangladesh",
-		learners: 12300,
-		rating: 4.8,
-		contributor: {
-			name: "Ayesha Rahman",
-			avatarUrl: "/avatars/ayesha.png",
-		},
-	},
-	pricing: [
-		{
-			listing_id: 1,
-			type: "paid",
-			credit_hour: 10,
-			price: 99.99,
-			currency: "USD",
-		},
-		{
-			listing_id: 1,
-			type: "barter",
-			credit_hour: 10,
-			price: 99.99,
-			currency: "USD",
-		},
-		{
-			listing_id: 1,
-			type: "semi trade",
-			credit_hour: 15,
-			price: 49.99,
-			currency: "USD",
-		},
-	],
-	faqs: [
-		{
-			listing_id: 1,
-			question: "What are the prerequisites?",
-			answer: "Basic knowledge of computers.",
-			found_helpful: 0,
-		},
-		{
-			listing_id: 1,
-			question: "What are the prerequisites?",
-			answer: "Basic knowledge of computers.",
-			found_helpful: 0,
-		},
-		{
-			listing_id: 1,
-			question: "What are the prerequisites?",
-			answer: "Basic knowledge of computers.",
-			found_helpful: 0,
-		},
-	],
-	outcomes: [
-		{
-			pricing_type: "paid",
-			outcome:
-				"Learn to build modern, responsive websites.Learn to build modern, responsive websites.",
-		},
-		{
-			pricing_type: "barter",
-			outcome: "Understand core HTML, CSS, and JavaScript.",
-		},
-		{
-			pricing_type: "semi trade",
-			outcome:
-				"Gain intermediate JavaScript skills with hands-on projects.",
-		},
-	],
-	slots: [
-		{
-			pricing_type: "paid",
-			days_of_week: "monday",
-			slot_time: "10:00 - 12:00",
-			is_available: true,
-		},
-		{
-			pricing_type: "paid",
-			days_of_week: "wednesday",
-			slot_time: "14:00 - 16:00",
-			is_available: false,
-		},
-		{
-			pricing_type: "barter",
-			days_of_week: "friday",
-			slot_time: "09:00 - 11:00",
-			is_available: true,
-		},
-		{
-			pricing_type: "semi trade",
-			days_of_week: "tuesday",
-			slot_time: "13:00 - 15:00",
-			is_available: true,
-		},
-		{
-			pricing_type: "semi trade",
-			days_of_week: "thursday",
-			slot_time: "16:00 - 18:00",
-			is_available: false,
-		},
-	],
-	review: [
-		{
-			booking_id: 1,
-			reviewer_id: 1,
-			rating: 5,
-			comment: "Very informative and clear. Highly recommended!",
-			listing_id: 1,
-		},
-		{
-			booking_id: 2,
-			reviewer_id: 2,
-			rating: 5,
-			comment: "Excellent course, learned a lot!",
-			listing_id: 1,
-		},
-	],
-};
+// const data = {
+// 	listing: {
+// 		id: 1,
+// 		user_id: 1,
+// 		skill_id: 2,
+// 		title: "Web Development",
+// 		description:
+// 			"Build modern, responsive websites with HTML, CSS, and JS.",
+// 		proficiency_level: "beginner",
+// 		banner: "https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?q=80&w=1974&auto=format&fit=crop",
+// 		is_deleted: false,
+// 		is_in_person_learning: true,
+// 		location: "Dhaka, Bangladesh",
+// 		learners: 12300,
+// 		rating: 4.8,
+// 		contributor: {
+// 			name: "Ayesha Rahman",
+// 			avatarUrl: "/avatars/ayesha.png",
+// 		},
+// 	},
+// 	pricing: [
+// 		{
+// 			listing_id: 1,
+// 			type: "paid",
+// 			credit_hour: 10,
+// 			price: 99.99,
+// 			currency: "USD",
+// 		},
+// 		{
+// 			listing_id: 1,
+// 			type: "barter",
+// 			credit_hour: 10,
+// 			price: 99.99,
+// 			currency: "USD",
+// 		},
+// 		{
+// 			listing_id: 1,
+// 			type: "semi trade",
+// 			credit_hour: 15,
+// 			price: 49.99,
+// 			currency: "USD",
+// 		},
+// 	],
+// 	faqs: [
+// 		{
+// 			listing_id: 1,
+// 			question: "What are the prerequisites?",
+// 			answer: "Basic knowledge of computers.",
+// 			found_helpful: 0,
+// 		},
+// 		{
+// 			listing_id: 1,
+// 			question: "What are the prerequisites?",
+// 			answer: "Basic knowledge of computers.",
+// 			found_helpful: 0,
+// 		},
+// 		{
+// 			listing_id: 1,
+// 			question: "What are the prerequisites?",
+// 			answer: "Basic knowledge of computers.",
+// 			found_helpful: 0,
+// 		},
+// 	],
+// 	outcomes: [
+// 		{
+// 			pricing_type: "paid",
+// 			outcome:
+// 				"Learn to build modern, responsive websites.Learn to build modern, responsive websites.",
+// 		},
+// 		{
+// 			pricing_type: "barter",
+// 			outcome: "Understand core HTML, CSS, and JavaScript.",
+// 		},
+// 		{
+// 			pricing_type: "semi trade",
+// 			outcome:
+// 				"Gain intermediate JavaScript skills with hands-on projects.",
+// 		},
+// 	],
+// 	slots: [
+// 		{
+// 			pricing_type: "paid",
+// 			days_of_week: "monday",
+// 			slot_time: "10:00 - 12:00",
+// 			is_available: true,
+// 		},
+// 		{
+// 			pricing_type: "paid",
+// 			days_of_week: "wednesday",
+// 			slot_time: "14:00 - 16:00",
+// 			is_available: false,
+// 		},
+// 		{
+// 			pricing_type: "barter",
+// 			days_of_week: "friday",
+// 			slot_time: "09:00 - 11:00",
+// 			is_available: true,
+// 		},
+// 		{
+// 			pricing_type: "semi trade",
+// 			days_of_week: "tuesday",
+// 			slot_time: "13:00 - 15:00",
+// 			is_available: true,
+// 		},
+// 		{
+// 			pricing_type: "semi trade",
+// 			days_of_week: "thursday",
+// 			slot_time: "16:00 - 18:00",
+// 			is_available: false,
+// 		},
+// 	],
+// 	review: [
+// 		{
+// 			booking_id: 1,
+// 			reviewer_id: 1,
+// 			rating: 5,
+// 			comment: "Very informative and clear. Highly recommended!",
+// 			listing_id: 1,
+// 		},
+// 		{
+// 			booking_id: 2,
+// 			reviewer_id: 2,
+// 			rating: 5,
+// 			comment: "Excellent course, learned a lot!",
+// 			listing_id: 1,
+// 		},
+// 	],
+// };
 
 export default function ListingDetails() {
+	const [listing, setListing] = useState(null);
 	const { id } = useParams();
 	const navigate = useNavigate();
 
 	const listingId = Number(id);
-	const listing = data.listing.id === listingId ? data.listing : null;
+
+	useEffect(() => {
+		const fetchListing = async () => {
+			try {
+				const res = await axiosInstance.get(`/listings/${listingId}`);
+				setListing(res.data.data);
+			} catch (error) {
+				console.log(error);
+				setListing(null);
+			}
+		};
+		fetchListing();
+	}, [listingId]);
+
+	console.log(listing);
 
 	if (!listing) {
 		return (
@@ -149,26 +165,21 @@ export default function ListingDetails() {
 		);
 	}
 
-	const pricing = data.pricing.filter((p) => p.listing_id === listingId);
-	const faqs = data.faqs.filter((f) => f.listing_id === listingId);
-	const outcomes = data.outcomes;
-	const slots = data.slots;
-	const reviews = data.review.filter((r) => r.listing_id === listingId);
-
 	const capitalizeType = (type) =>
 		type
 			.split(" ")
-			.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+			.map((word) => word?.charAt(0).toUpperCase() + word?.slice(1))
 			.join(" ");
 
 	// Helper to check if any slot of a pricing type is unavailable
 	const hasUnavailableSlot = (pricingType) =>
-		slots.some(
+		listing.slots.some(
 			(slot) =>
 				slot.pricing_type === pricingType && slot.is_available === false
 		);
 
 	return (
+		// <div>this is details page</div>
 		<motion.div
 			className="min-h-screen bg-gray-50 px-6 py-10"
 			initial={{ opacity: 0, y: 20 }}
@@ -198,18 +209,18 @@ export default function ListingDetails() {
 							<div className="flex items-center gap-3">
 								<Avatar className="w-12 h-12 ring-2 ring-indigo-500 shadow-md">
 									<AvatarImage
-										src={listing.contributor.avatarUrl}
-										alt={listing.contributor.name}
+										src={listing.user.Avatar}
+										alt={listing.user.name}
 									/>
 									<AvatarFallback>
-										{listing.contributor.name
+										{listing.user.name
 											.slice(0, 2)
 											.toUpperCase()}
 									</AvatarFallback>
 								</Avatar>
 								<div>
 									<p className="font-semibold text-gray-900">
-										{listing.contributor.name}
+										{listing.user.name}
 									</p>
 									<p className="text-sm text-gray-500">
 										Contributor
@@ -219,9 +230,7 @@ export default function ListingDetails() {
 
 							<div className="flex items-center gap-2 text-indigo-600 font-semibold text-lg">
 								<Users className="w-7 h-7" />
-								<span>
-									{listing.learners.toLocaleString()} Learners
-								</span>
+								<span>{listing.learners} Learners</span>
 							</div>
 
 							<div className="flex items-center gap-2 text-yellow-400 font-semibold text-lg">
@@ -260,7 +269,7 @@ export default function ListingDetails() {
 
 				{/* Pricing Cards */}
 				<div className="grid md:grid-cols-3 gap-8">
-					{pricing.map((item, i) => {
+					{listing.pricing.map((item, i) => {
 						const isUnavailable = hasUnavailableSlot(item.type);
 
 						return (
@@ -290,7 +299,7 @@ export default function ListingDetails() {
 											Learning Outcomes:
 										</h3>
 										<ul className="list-disc list-inside text-gray-700 space-y-2 mb-6 flex-grow">
-											{outcomes
+											{listing.outcomes
 												.filter(
 													(o) =>
 														o.pricing_type ===
@@ -338,9 +347,9 @@ export default function ListingDetails() {
 					<h2 className="text-3xl font-semibold mb-6 text-indigo-700 text-center">
 						Available Slots
 					</h2>
-					<ul className="space-y-3">
-						{slots.map((slot, idx) => (
-							<li
+					<div className="space-y-3 flex flex-wrap gap-3">
+						{listing.slots.map((slot, idx) => (
+							<span
 								key={idx}
 								className={`p-4 rounded-lg border transition-colors duration-300 cursor-pointer ${
 									slot.is_available
@@ -349,12 +358,12 @@ export default function ListingDetails() {
 								}`}
 							>
 								📅{" "}
-								{slot.days_of_week.charAt(0).toUpperCase() +
-									slot.days_of_week.slice(1)}{" "}
-								at {slot.slot_time}
-							</li>
+								{slot.day.charAt(0).toUpperCase() +
+									slot.day.slice(1)}{" "}
+								at {slot.time}
+							</span>
 						))}
-					</ul>
+					</div>
 				</section>
 
 				{/* FAQs */}
@@ -363,7 +372,7 @@ export default function ListingDetails() {
 						FAQs
 					</h2>
 					<ul className="space-y-6">
-						{faqs.map((faq, i) => (
+						{listing.faqs.map((faq, i) => (
 							<li
 								key={i}
 								className="p-6 rounded-xl bg-white shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer"
@@ -385,7 +394,7 @@ export default function ListingDetails() {
 						Reviews
 					</h2>
 					<ul className="space-y-6">
-						{reviews.map((review, i) => (
+						{listing.reviews.map((review, i) => (
 							<li
 								key={i}
 								className="p-6 rounded-xl bg-white shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer"
