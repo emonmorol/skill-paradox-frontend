@@ -52,6 +52,13 @@ export default function CheckoutPage() {
 	}, [pricingType]);
 
 	const handlePayment = async () => {
+		console.log({
+			transactionId,
+			phoneNumber,
+			offeredListingId,
+			pricingType,
+			listing_id,
+		});
 		if (
 			(pricingType === "paid" || pricingType === "semi_trade") &&
 			(!transactionId.trim() || !phoneNumber.trim())
