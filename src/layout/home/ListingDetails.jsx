@@ -1,9 +1,13 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Star, Users } from "lucide-react";
+import { Users, Star } from "lucide-react";
 import { motion } from "framer-motion";
+
+import PricingCard from "@/cards/PricingCard";
+import SlotList from "@/cards/SlotList";
+import FaqList from "@/cards/FaqList";
+import ReviewList from "@/cards/ReviewList";
 
 const data = {
 	listing: {
@@ -57,14 +61,14 @@ const data = {
 		},
 		{
 			listing_id: 1,
-			question: "What are the prerequisites?",
-			answer: "Basic knowledge of computers.",
+			question: "What is the course duration?",
+			answer: "10 weeks with weekly sessions.",
 			found_helpful: 0,
 		},
 		{
 			listing_id: 1,
-			question: "What are the prerequisites?",
-			answer: "Basic knowledge of computers.",
+			question: "Are there any assessments?",
+			answer: "Yes, quizzes after each module.",
 			found_helpful: 0,
 		},
 	],
@@ -161,12 +165,15 @@ export default function ListingDetails() {
 			.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
 			.join(" ");
 
-	// Helper to check if any slot of a pricing type is unavailable
 	const hasUnavailableSlot = (pricingType) =>
 		slots.some(
 			(slot) =>
 				slot.pricing_type === pricingType && slot.is_available === false
 		);
+
+	const handleEnroll = (state) => {
+		navigate("/checkout", { state });
+	};
 
 	return (
 		<motion.div
@@ -260,162 +267,37 @@ export default function ListingDetails() {
 
 				{/* Pricing Cards */}
 				<div className="grid md:grid-cols-3 gap-8">
-					{pricing.map((item, i) => {
-						const isUnavailable = hasUnavailableSlot(item.type);
-
-						return (
-							<motion.div
-								key={i}
-								whileHover={{
-									scale: 1.04,
-									boxShadow:
-										"0 15px 25px rgba(99, 102, 241, 0.3)",
-								}}
-								transition={{ type: "spring", stiffness: 300 }}
-								className={`p-8 rounded-2xl border border-gray-200 shadow-sm flex flex-col justify-between ${
-									isUnavailable ? "bg-red-100" : "bg-white"
-								}`}
-							>
-								<div>
-									<h2 className="text-3xl font-semibold mb-4 text-indigo-700">
-										{capitalizeType(item.type)} Pricing
-									</h2>
-									<p className="text-gray-800 text-2xl font-semibold mb-6">
-										💰 {item.price} {item.currency} for{" "}
-										{item.credit_hour} hours
-									</p>
-
-									<div>
-										<h3 className="font-semibold text-indigo-600 mb-2 text-lg">
-											Learning Outcomes:
-										</h3>
-										<ul className="list-disc list-inside text-gray-700 space-y-2 mb-6 flex-grow">
-											{outcomes
-												.filter(
-													(o) =>
-														o.pricing_type ===
-														item.type
-												)
-												.map((o, idx) => (
-													<li
-														key={idx}
-														className="text-lg"
-													>
-														{o.outcome}
-													</li>
-												))}
-										</ul>
-									</div>
-								</div>
-
-								{/* Enroll Button */}
-								<button
-									onClick={() =>
-										navigate("/checkout", {
-											state: {
-												pricingType: "Paid", // or dynamically use selected type
-												amount: 99.99,
-												currency: "USD",
-											},
-										})
-									}
-									disabled={isUnavailable}
-									className={`mt-4 font-semibold py-2 px-6 rounded-xl shadow-md transition-colors duration-300 ${
-										isUnavailable
-											? "bg-gray-300 text-gray-500 cursor-not-allowed opacity-50"
-											: "bg-indigo-600 text-white hover:bg-indigo-700 cursor-pointer"
-									}`}
-								>
-									Enroll
-								</button>
-							</motion.div>
-						);
-					})}
+					{pricing.map((item, i) => (
+						<PricingCard
+							key={i}
+							pricing={item}
+							outcomes={outcomes}
+							isUnavailable={hasUnavailableSlot(item.type)}
+							onEnroll={handleEnroll}
+							capitalizeType={capitalizeType}
+							listingTitle={listing.title}
+							contributor={listing.contributor.name}
+						/>
+					))}
 				</div>
 
 				{/* Slots Section */}
-				<section className="bg-indigo-50 rounded-2xl p-8 shadow-inner max-w-4xl mx-auto">
-					<h2 className="text-3xl font-semibold mb-6 text-indigo-700 text-center">
-						Available Slots
-					</h2>
-					<ul className="space-y-3">
-						{slots.map((slot, idx) => (
-							<li
-								key={idx}
-								className={`p-4 rounded-lg border transition-colors duration-300 cursor-pointer ${
-									slot.is_available
-										? "border-indigo-400 bg-white hover:bg-indigo-100"
-										: "border-red-400 bg-red-100 text-red-700 cursor-not-allowed line-through"
-								}`}
-							>
-								📅{" "}
-								{slot.days_of_week.charAt(0).toUpperCase() +
-									slot.days_of_week.slice(1)}{" "}
-								at {slot.slot_time}
-							</li>
-						))}
-					</ul>
-				</section>
+				<SlotList slots={slots} />
 
 				{/* FAQs */}
-				<section className="bg-indigo-50 rounded-2xl p-8 shadow-inner max-w-4xl mx-auto">
-					<h2 className="text-3xl font-semibold mb-6 text-indigo-700 text-center">
-						FAQs
-					</h2>
-					<ul className="space-y-6">
-						{faqs.map((faq, i) => (
-							<li
-								key={i}
-								className="p-6 rounded-xl bg-white shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer"
-							>
-								<p className="font-semibold text-gray-900 text-xl">
-									Q: {faq.question}
-								</p>
-								<p className="mt-3 text-gray-700 text-lg">
-									A: {faq.answer}
-								</p>
-							</li>
-						))}
-					</ul>
-				</section>
+				<FaqList faqs={faqs} />
 
 				{/* Reviews */}
-				<section className="bg-indigo-50 rounded-2xl p-8 shadow-inner max-w-4xl mx-auto">
-					<h2 className="text-3xl font-semibold mb-6 text-indigo-700 text-center">
-						Reviews
-					</h2>
-					<ul className="space-y-6">
-						{reviews.map((review, i) => (
-							<li
-								key={i}
-								className="p-6 rounded-xl bg-white shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer"
-							>
-								<div className="flex items-center justify-between mb-3">
-									<p className="font-semibold text-gray-900 text-lg">
-										Reviewer #{review.reviewer_id}
-									</p>
-									<p className="flex items-center gap-1 text-yellow-400 font-semibold text-lg">
-										<Star className="w-5 h-5" />{" "}
-										{review.rating}/5
-									</p>
-								</div>
-								<p className="text-gray-700 text-lg">
-									{review.comment}
-								</p>
-							</li>
-						))}
-					</ul>
-				</section>
+				<ReviewList reviews={reviews} />
 
-				{/* Buttons */}
+				{/* Back Button */}
 				<div className="flex gap-6 justify-center md:justify-end mt-12">
-					<Button
-						variant="outline"
-						className="border-indigo-600 text-indigo-600 hover:bg-indigo-100 font-semibold rounded-xl px-8 py-4 transition-colors duration-300 text-lg"
+					<button
+						className="border border-indigo-600 text-indigo-600 hover:bg-indigo-100 font-semibold rounded-xl px-8 py-4 transition-colors duration-300 text-lg"
 						onClick={() => navigate(-1)}
 					>
 						Back
-					</Button>
+					</button>
 				</div>
 			</div>
 		</motion.div>

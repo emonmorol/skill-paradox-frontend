@@ -13,6 +13,7 @@ import AlertCardProps from "../layout/home/AlertCardProps";
 import MyScheduleProps from "../layout/bookings/MyScheduleProps";
 import ListingDetails from "../layout/home/ListingDetails";
 import CheckoutPage from "../pages/CheckoutPage";
+import ProfilePage from "../pages/ProfilePage";
 
 const routes = createBrowserRouter([
 	{
@@ -58,6 +59,10 @@ const routes = createBrowserRouter([
 			{
 				path: "/checkout", // ✅ ADD THIS
 				element: <CheckoutPage />,
+			},
+			{
+				path: "profile", // ✅ ADD THIS
+				element: <ProfilePage />,
 			},
 		],
 	},
