@@ -65,14 +65,6 @@ const data = {
 			],
 		},
 		{
-			title: "Search & Explore",
-			icon: SearchCheckIcon,
-			items: [
-				{ title: "Browse Skills", url: "#" },
-				{ title: "Trending Skills", url: "#" },
-			],
-		},
-		{
 			title: "Bookings",
 			icon: Calendar1Icon,
 			items: [

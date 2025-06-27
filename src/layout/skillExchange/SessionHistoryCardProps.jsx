@@ -1,18 +1,44 @@
 import React from "react";
-import BarterRequestCard from "../../cards/BarterRequestCard";
-import { sessions } from "../../data/sessions"; // Adjust the path if needed
+import ExchangeHistoryList from "./ExchangeHistoryList";
+
+const sampleHistory = [
+	{
+		id: 1,
+		title: "Mastering Skill 9 Fundamentals",
+		skill: "Fitness Coaching",
+		category: "Health & Wellness",
+		status: "pending",
+	},
+	{
+		id: 2,
+		title: "Mastering Skill 6 Fundamentals",
+		skill: "Graphic Design",
+		category: "Design",
+		status: "accepted",
+	},
+	{
+		id: 3,
+		title: "Advanced React Techniques",
+		skill: "React.js",
+		category: "Web Development",
+		status: "rejected",
+	},
+	{
+		id: 4,
+		title: "Yoga & Mindfulness",
+		skill: "Yoga",
+		category: "Health & Wellness",
+		status: "accepted",
+	},
+];
 
 export default function SessionHistoryCardProps() {
-	// Sort sessions by date (newest first)
-	const sortedSessions = [...sessions].sort(
-		(a, b) => new Date(b.date) - new Date(a.date)
-	);
-
 	return (
-		<div className="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-			{sortedSessions.map((session) => (
-				<BarterRequestCard key={session.id} {...session} />
-			))}
+		<div className="p-6">
+			<ExchangeHistoryList
+				history={sampleHistory}
+				onAction={(action, item) => console.log(action, item)}
+			/>
 		</div>
 	);
 }

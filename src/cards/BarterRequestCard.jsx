@@ -7,10 +7,9 @@ import {
 	Calendar,
 	Clock,
 	Repeat2,
-	MapPin,
 	MoreVertical,
-	DollarSign,
 	Tag,
+	Layers,
 } from "lucide-react";
 import {
 	DropdownMenu,
@@ -18,61 +17,28 @@ import {
 	DropdownMenuContent,
 	DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
+import { useNavigate } from "react-router-dom";
+import axiosInstance from "@/utils/axiosInstance";
+import { useAuth } from "@/context/AuthContext";
+import Swal from "sweetalert2";
 
 export default function BarterRequestCard({
 	id,
-	title,
-	skillName,
-	skillCategory,
-	proficiencyLevel,
-	description,
-	date,
-	time,
 	status,
-	counterparty,
-	counterpartyAvatarUrl,
+	request_time,
+	pricing_type,
+	requester,
+	target_listing,
+	offered_listing,
 	isIncoming,
-	isInPersonLearning,
-	location,
-	price,
-	currency,
-	tradeType,
-	tags = [],
 	onChat = () => alert("Opening chat..."),
 	onViewProfile = () => alert("Viewing profile..."),
 	onReport = () => alert("Reported."),
-	onAccept = async () => alert("Accept action triggered."),
-	onReject = async () => alert("Reject action triggered."),
-	onCancel = async () => alert("Cancel action triggered."),
 }) {
 	const [isLoading, setIsLoading] = useState(false);
-
-	console.log({
-		id: id,
-		title: title,
-		skillName: skillName,
-		skillCategory: skillCategory,
-		proficiencyLevel: proficiencyLevel,
-		description: description,
-		date: date,
-		time: time,
-		status: status,
-		counterparty: counterparty,
-		counterpartyAvatarUrl: counterpartyAvatarUrl,
-		isIncoming: isIncoming,
-		isInPersonLearning: isInPersonLearning,
-		location: location,
-		price: price,
-		currency: currency,
-		tradeType: tradeType,
-		tags: tags,
-		onChat: onChat,
-		onViewProfile: onViewProfile,
-		onReport: onReport,
-		onAccept: onAccept,
-		onReject: onReject,
-		onCancel: onCancel,
-	});
+	const navigate = useNavigate();
+	const [nStatus, setNStatus] = useState(status);
+	const { user } = useAuth();
 
 	useEffect(() => {
 		const card = document.querySelector(".barter-card");
@@ -81,6 +47,12 @@ export default function BarterRequestCard({
 		}
 	}, []);
 
+	const formattedDate = new Date(request_time).toLocaleDateString();
+	const formattedTime = new Date(request_time).toLocaleTimeString([], {
+		hour: "2-digit",
+		minute: "2-digit",
+	});
+
 	const statusColor = {
 		pending: "bg-yellow-100 text-yellow-800",
 		accepted: "bg-green-100 text-green-800",
@@ -88,27 +60,39 @@ export default function BarterRequestCard({
 		completed: "bg-gray-200 text-gray-800",
 	};
 
-	const handleAction = async (actionFn, actionName) => {
-		if (!actionFn) {
-			alert(`${actionName} action is not implemented`);
-			return;
-		}
+	const handleAction = async (actionName) => {
 		setIsLoading(true);
 		try {
-			await actionFn();
-			alert(`${actionName} succeeded for "${title}"`);
-		} catch (error) {
-			alert(`${actionName} failed: ${error.message}`);
+			console.log({
+				id: id,
+				action: actionName,
+			});
+			await axiosInstance.patch(`/barter/response`, {
+				id: id,
+				action: actionName,
+			});
+			setNStatus(actionName);
+			Swal.fire({
+				icon: "success",
+				title: `${actionName.charAt(0).toUpperCase() + actionName.slice(1)} succeeded`,
+				text: `for "${target_listing?.title}"`,
+				timer: 1800,
+				showConfirmButton: false,
+			});
+		} catch (err) {
+			Swal.fire({
+				icon: "error",
+				title: `${actionName.charAt(0).toUpperCase() + actionName.slice(1)} failed`,
+				text: err.message,
+			});
 		}
 		setIsLoading(false);
 	};
 
-	const formattedStatus = status.charAt(0).toUpperCase() + status.slice(1);
-
 	return (
-		<Card className="barter-card w-full max-w-md rounded-3xl bg-white p-0 shadow-lg transition-transform duration-300 hover:scale-[1.03] hover:shadow-2xl cursor-default overflow-hidden">
+		<Card className="barter-card w-full max-w-md rounded-3xl bg-white p-0 shadow-lg transition-transform duration-300 hover:scale-[1.03] hover:shadow-2xl overflow-hidden">
 			<CardHeader className="flex flex-col gap-3 p-5 relative">
-				{/* 3-dot menu */}
+				{/* Dropdown menu */}
 				<div className="absolute top-5 right-5 z-20">
 					<DropdownMenu>
 						<DropdownMenuTrigger asChild>
@@ -121,11 +105,6 @@ export default function BarterRequestCard({
 							</Button>
 						</DropdownMenuTrigger>
 						<DropdownMenuContent align="end">
-							<DropdownMenuItem
-								onClick={() => alert(description)}
-							>
-								View Full Description
-							</DropdownMenuItem>
 							<DropdownMenuItem onClick={onChat}>
 								Chat
 							</DropdownMenuItem>
@@ -148,116 +127,132 @@ export default function BarterRequestCard({
 				</Badge>
 
 				<CardTitle className="text-2xl font-extrabold leading-tight">
-					{title}
+					Trade Request
 				</CardTitle>
 
-				<div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-					<div className="flex items-center gap-1">
-						<Tag className="w-4 h-4" />
-						<span className="font-medium">{skillName}</span>
-					</div>
-					{skillCategory && (
-						<Badge variant="outline" className="text-xs px-2 py-1">
-							{skillCategory}
-						</Badge>
-					)}
-					{proficiencyLevel && (
-						<Badge
-							variant="secondary"
-							className="text-xs px-2 py-1 uppercase"
+				{/* Dual Listing */}
+				<div className="flex flex-wrap sm:flex-row gap-4 p-4 rounded-xl border border-gray-200 bg-gray-50">
+					{/* Offered Listing */}
+					<div className="flex-1 bg-white shadow-sm rounded-lg p-4 flex flex-col gap-4 border border-gray-100 hover:shadow-md transition-shadow cursor-pointer">
+						<p className="text-xs font-semibold uppercase text-indigo-600 tracking-wide">
+							Offered Listing
+						</p>
+						<h3
+							className="text-lg font-bold text-gray-900 truncate"
+							title={offered_listing?.title}
 						>
-							{proficiencyLevel}
-						</Badge>
-					)}
-				</div>
+							{offered_listing?.title}
+						</h3>
+						<div className="flex items-center gap-3 text-gray-600">
+							<Tag className="w-4 h-4 text-indigo-400" />
+							<span className="font-medium">
+								{offered_listing?.skill?.name}
+							</span>
+						</div>
+						<div className="flex items-center gap-3 text-gray-400 text-sm">
+							<Layers className="w-3.5 h-3.5" />
+							<span>{offered_listing?.skill?.category}</span>
+						</div>
 
-				{description && (
-					<p className="mt-2 italic text-sm text-gray-600 line-clamp-3">
-						{description}
-					</p>
-				)}
-
-				{tags.length > 0 && (
-					<div className="flex flex-wrap gap-2 mt-2">
-						{tags.map((tag) => (
-							<Badge
-								key={tag}
-								variant="outline"
-								className="text-xs px-2 py-1"
-							>
-								{tag}
-							</Badge>
-						))}
+						{/* View Details Button */}
+						<Button
+							variant="outline"
+							size="sm"
+							onClick={() =>
+								navigate(`/listing/${offered_listing.id}`)
+							}
+							className="self-start"
+						>
+							View Details
+						</Button>
 					</div>
-				)}
+
+					{/* Requested Listing */}
+					<div className="flex-1 bg-white shadow-sm rounded-lg p-4 flex flex-col gap-4 border border-gray-100 hover:shadow-md transition-shadow cursor-pointer">
+						<p className="text-xs font-semibold uppercase text-emerald-600 tracking-wide">
+							Requested Listing
+						</p>
+						<h3
+							className="text-lg font-bold text-gray-900 truncate"
+							title={target_listing?.title}
+						>
+							{target_listing?.title}
+						</h3>
+						<div className="flex items-center gap-3 text-gray-600">
+							<Tag className="w-4 h-4 text-emerald-400" />
+							<span className="font-medium">
+								{target_listing?.skill?.name}
+							</span>
+						</div>
+						<div className="flex items-center gap-3 text-gray-400 text-sm">
+							<Layers className="w-3.5 h-3.5" />
+							<span>{target_listing?.skill?.category}</span>
+						</div>
+
+						{/* View Details Button */}
+						<Button
+							variant="outline"
+							size="sm"
+							onClick={() =>
+								navigate(`/listing/${target_listing.id}`)
+							}
+							className="self-start"
+						>
+							View Details
+						</Button>
+					</div>
+				</div>
 			</CardHeader>
 
 			<CardContent className="p-5 pt-0 space-y-4">
 				<div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-muted-foreground">
 					<div className="flex items-center gap-2">
 						<Calendar className="w-5 h-5" />
-						<span>{date}</span>
+						<span>{formattedDate}</span>
 					</div>
 					<div className="flex items-center gap-2">
 						<Clock className="w-5 h-5" />
-						<span>{time}</span>
+						<span>{formattedTime}</span>
 					</div>
-					{isInPersonLearning && location && (
-						<div className="flex items-center gap-2 col-span-2 sm:col-span-1">
-							<MapPin className="w-5 h-5" />
-							<span>{location}</span>
-						</div>
-					)}
-
-					{typeof price === "number" && (
-						<div className="flex items-center gap-2">
-							<DollarSign className="w-5 h-5" />
-							<span>
-								{price.toFixed(2)} {currency}
-							</span>
-						</div>
-					)}
-					{tradeType && (
+					<div className="flex items-center gap-2">
 						<Badge
 							variant="outline"
 							className="uppercase text-xs px-2 py-1"
 						>
-							{tradeType.replace("_", " ")}
+							{pricing_type?.replace("_", " ")}
 						</Badge>
-					)}
+					</div>
 				</div>
 
 				<div className="flex items-center justify-between">
+					{/* Counterparty Info */}
 					<div className="flex items-center gap-3">
 						<Avatar className="w-10 h-10">
 							<AvatarImage
-								src={counterpartyAvatarUrl}
-								alt={counterparty}
-								loading="lazy"
+								src={requester?.avatar}
+								alt={requester?.name}
 							/>
 							<AvatarFallback>
-								{counterparty
-									? counterparty.slice(0, 2).toUpperCase()
-									: "??"}
+								{requester?.name?.slice(0, 2).toUpperCase() ||
+									"??"}
 							</AvatarFallback>
 						</Avatar>
 						<div>
 							<p className="text-sm font-semibold">
-								{counterparty}
+								{requester?.name}
 							</p>
 						</div>
 					</div>
 
-					{status === "pending" ? (
+					{/* Action Buttons or Status */}
+					{nStatus === "pending" ? (
 						isIncoming ? (
 							<div className="flex gap-3">
 								<Button
 									variant="outline"
 									size="sm"
 									disabled={isLoading}
-									onClick={() =>
-										handleAction(onAccept, "Accept")
-									}
+									onClick={() => handleAction("accept")}
 									className="transition-transform hover:scale-105"
 								>
 									{isLoading ? "..." : "Accept"}
@@ -266,9 +261,7 @@ export default function BarterRequestCard({
 									variant="destructive"
 									size="sm"
 									disabled={isLoading}
-									onClick={() =>
-										handleAction(onReject, "Reject")
-									}
+									onClick={() => handleAction("reject")}
 									className="transition-transform hover:scale-105"
 								>
 									{isLoading ? "..." : "Reject"}
@@ -279,7 +272,6 @@ export default function BarterRequestCard({
 								variant="destructive"
 								size="sm"
 								disabled={isLoading}
-								onClick={() => handleAction(onCancel, "Cancel")}
 								className="transition-transform hover:scale-105"
 							>
 								{isLoading ? "..." : "Cancel"}
@@ -292,7 +284,7 @@ export default function BarterRequestCard({
 								"bg-muted text-muted-foreground"
 							}`}
 						>
-							{formattedStatus}
+							{nStatus}
 						</Badge>
 					)}
 				</div>

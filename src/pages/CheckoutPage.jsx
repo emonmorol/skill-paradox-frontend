@@ -12,10 +12,12 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import axiosInstance from "@/utils/axiosInstance";
+import { useAuth } from "@/context/AuthContext";
 
 export default function CheckoutPage() {
 	const navigate = useNavigate();
 	const location = useLocation();
+	const { user } = useAuth();
 
 	const {
 		creditHour,
@@ -24,18 +26,18 @@ export default function CheckoutPage() {
 		listing_id,
 		listingTitle,
 		contributor,
-		pricingType,
+		pricing_type,
 		amount,
 	} = location.state || {};
 
 	const [isProcessing, setIsProcessing] = useState(false);
 	const [transactionId, setTransactionId] = useState("");
 	const [phoneNumber, setPhoneNumber] = useState("");
-	const [offeredListingId, setOfferedListingId] = useState("");
+	const [offeredListingId, setOfferedListingId] = useState(0);
 	const [userListings, setUserListings] = useState([]);
 
 	useEffect(() => {
-		if (pricingType === "semi_trade" || pricingType === "trade") {
+		if (pricing_type === "semi_trade" || pricing_type === "trade") {
 			const fetchListings = async () => {
 				try {
 					const res = await axiosInstance.get("/listings/my");
@@ -49,18 +51,22 @@ export default function CheckoutPage() {
 
 			fetchListings();
 		}
-	}, [pricingType]);
+	}, [pricing_type]);
 
 	const handlePayment = async () => {
 		console.log({
 			transactionId,
 			phoneNumber,
 			offeredListingId,
-			pricingType,
+			pricing_type,
 			listing_id,
+			user_id: user.id,
+			credit_hours_remaining: creditHour,
+			amount,
+			currency,
 		});
 		if (
-			(pricingType === "paid" || pricingType === "semi_trade") &&
+			(pricing_type === "paid" || pricing_type === "semi_trade") &&
 			(!transactionId.trim() || !phoneNumber.trim())
 		) {
 			alert("Please fill out Transaction ID and Phone Number.");
@@ -68,7 +74,7 @@ export default function CheckoutPage() {
 		}
 
 		if (
-			(pricingType === "semi_trade" || pricingType === "trade") &&
+			(pricing_type === "semi_trade" || pricing_type === "trade") &&
 			!offeredListingId
 		) {
 			alert("Please select a course to offer.");
@@ -78,28 +84,32 @@ export default function CheckoutPage() {
 		setIsProcessing(true);
 
 		const payload = {
+			transaction_id: transactionId,
+			phone_number: phoneNumber,
+			offered_listing_id: Number(offeredListingId),
+			pricing_type,
 			listing_id,
-			pricing_type: pricingType,
-			transaction_id: transactionId || null,
-			phone_number: phoneNumber || null,
-			offered_listing_id: offeredListingId || null,
+			user_id: user.id,
+			credit_hours_remaining: creditHour,
+			amount,
+			currency,
 		};
 
-		// try {
-		// 	await axios.post("/api/enroll", payload);
-		// 	Swal.fire({
-		// 		title: "Enrolled",
-		// 		text: "Payment and Enrollment complete!",
-		// 		icon: "success",
-		// 		confirmButtonText: "Alhamdulillah",
-		// 	});
-		// 	navigate("/myschedule");
-		// } catch (error) {
-		// 	console.error(error);
-		// 	Swal.fire("Error", "Failed to enroll", "error");
-		// } finally {
-		// 	setIsProcessing(false);
-		// }
+		try {
+			await axiosInstance.post("/barter/enroll", payload);
+			Swal.fire({
+				title: "Enrolled",
+				text: "Payment and Enrollment complete!",
+				icon: "success",
+				confirmButtonText: "Alhamdulillah",
+			});
+			navigate("/myschedule");
+		} catch (error) {
+			console.error(error);
+			Swal.fire("Error", "Failed to enroll", "error");
+		} finally {
+			setIsProcessing(false);
+		}
 	};
 
 	if (
@@ -107,7 +117,7 @@ export default function CheckoutPage() {
 		!currency ||
 		!is_available ||
 		!listing_id ||
-		!pricingType
+		!pricing_type
 	) {
 		return (
 			<div className="p-8 text-center text-red-600 text-xl font-semibold">
@@ -149,7 +159,9 @@ export default function CheckoutPage() {
 						</p>
 						<p className="text-gray-600 capitalize">
 							Type:{" "}
-							<span className="font-semibold">{pricingType}</span>
+							<span className="font-semibold">
+								{pricing_type}
+							</span>
 						</p>
 					</div>
 					<p className="text-sm text-gray-500">
@@ -166,7 +178,7 @@ export default function CheckoutPage() {
 					className="space-y-6"
 				>
 					{/* Payment Summary */}
-					{pricingType !== "trade" && (
+					{pricing_type !== "trade" && (
 						<div className="bg-gradient-to-r from-indigo-100 via-white to-purple-100 rounded-2xl p-6 shadow-inner space-y-5 border border-indigo-200">
 							<h3 className="text-xl font-bold text-indigo-700 mb-3 flex items-center gap-2">
 								<CreditCard className="w-6 h-6" /> Payment
@@ -196,8 +208,8 @@ export default function CheckoutPage() {
 
 					{/* Input Fields */}
 					<div className="space-y-4">
-						{(pricingType === "paid" ||
-							pricingType === "semi_trade") && (
+						{(pricing_type === "paid" ||
+							pricing_type === "semi_trade") && (
 							<>
 								<div>
 									<label
@@ -239,8 +251,8 @@ export default function CheckoutPage() {
 							</>
 						)}
 
-						{(pricingType === "semi_trade" ||
-							pricingType === "trade") && (
+						{(pricing_type === "semi_trade" ||
+							pricing_type === "trade") && (
 							<div>
 								<label className="block text-sm font-medium text-gray-700 mb-1">
 									Offer Your Course in Exchange

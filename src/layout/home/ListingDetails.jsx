@@ -5,135 +5,6 @@ import { Star, Users } from "lucide-react";
 import axiosInstance from "@/utils/axiosInstance";
 import { motion } from "framer-motion";
 
-// const data = {
-// 	listing: {
-// 		id: 1,
-// 		user_id: 1,
-// 		skill_id: 2,
-// 		title: "Web Development",
-// 		description:
-// 			"Build modern, responsive websites with HTML, CSS, and JS.",
-// 		proficiency_level: "beginner",
-// 		banner: "https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?q=80&w=1974&auto=format&fit=crop",
-// 		is_deleted: false,
-// 		is_in_person_learning: true,
-// 		location: "Dhaka, Bangladesh",
-// 		learners: 12300,
-// 		rating: 4.8,
-// 		contributor: {
-// 			name: "Ayesha Rahman",
-// 			avatarUrl: "/avatars/ayesha.png",
-// 		},
-// 	},
-// 	pricing: [
-// 		{
-// 			listing_id: 1,
-// 			type: "paid",
-// 			credit_hour: 10,
-// 			price: 99.99,
-// 			currency: "USD",
-// 		},
-// 		{
-// 			listing_id: 1,
-// 			type: "barter",
-// 			credit_hour: 10,
-// 			price: 99.99,
-// 			currency: "USD",
-// 		},
-// 		{
-// 			listing_id: 1,
-// 			type: "semi trade",
-// 			credit_hour: 15,
-// 			price: 49.99,
-// 			currency: "USD",
-// 		},
-// 	],
-// 	faqs: [
-// 		{
-// 			listing_id: 1,
-// 			question: "What are the prerequisites?",
-// 			answer: "Basic knowledge of computers.",
-// 			found_helpful: 0,
-// 		},
-// 		{
-// 			listing_id: 1,
-// 			question: "What are the prerequisites?",
-// 			answer: "Basic knowledge of computers.",
-// 			found_helpful: 0,
-// 		},
-// 		{
-// 			listing_id: 1,
-// 			question: "What are the prerequisites?",
-// 			answer: "Basic knowledge of computers.",
-// 			found_helpful: 0,
-// 		},
-// 	],
-// 	outcomes: [
-// 		{
-// 			pricing_type: "paid",
-// 			outcome:
-// 				"Learn to build modern, responsive websites.Learn to build modern, responsive websites.",
-// 		},
-// 		{
-// 			pricing_type: "barter",
-// 			outcome: "Understand core HTML, CSS, and JavaScript.",
-// 		},
-// 		{
-// 			pricing_type: "semi trade",
-// 			outcome:
-// 				"Gain intermediate JavaScript skills with hands-on projects.",
-// 		},
-// 	],
-// 	slots: [
-// 		{
-// 			pricing_type: "paid",
-// 			days_of_week: "monday",
-// 			slot_time: "10:00 - 12:00",
-// 			is_available: true,
-// 		},
-// 		{
-// 			pricing_type: "paid",
-// 			days_of_week: "wednesday",
-// 			slot_time: "14:00 - 16:00",
-// 			is_available: false,
-// 		},
-// 		{
-// 			pricing_type: "barter",
-// 			days_of_week: "friday",
-// 			slot_time: "09:00 - 11:00",
-// 			is_available: true,
-// 		},
-// 		{
-// 			pricing_type: "semi trade",
-// 			days_of_week: "tuesday",
-// 			slot_time: "13:00 - 15:00",
-// 			is_available: true,
-// 		},
-// 		{
-// 			pricing_type: "semi trade",
-// 			days_of_week: "thursday",
-// 			slot_time: "16:00 - 18:00",
-// 			is_available: false,
-// 		},
-// 	],
-// 	review: [
-// 		{
-// 			booking_id: 1,
-// 			reviewer_id: 1,
-// 			rating: 5,
-// 			comment: "Very informative and clear. Highly recommended!",
-// 			listing_id: 1,
-// 		},
-// 		{
-// 			booking_id: 2,
-// 			reviewer_id: 2,
-// 			rating: 5,
-// 			comment: "Excellent course, learned a lot!",
-// 			listing_id: 1,
-// 		},
-// 	],
-// };
-
 export default function ListingDetails() {
 	const [listing, setListing] = useState(null);
 	const { id } = useParams();
@@ -175,10 +46,6 @@ export default function ListingDetails() {
 			(slot) =>
 				slot.pricing_type === pricingType && slot.is_available === false
 		);
-
-	const handleEnroll = (state) => {
-		navigate("/checkout", { state });
-	};
 
 	return (
 		// <div>this is details page</div>
@@ -329,7 +196,7 @@ export default function ListingDetails() {
 												contributor: listing.user.name, // or however you pass the user's name
 												creditHour: item.credit_hour,
 												currency: item.currency,
-												pricingType: item.type,
+												pricing_type: item.type,
 												amount:
 													item.price *
 													item.credit_hour,

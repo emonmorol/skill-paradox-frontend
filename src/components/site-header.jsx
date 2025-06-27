@@ -33,12 +33,12 @@ export function SiteHeader() {
 					<BreadcrumbList>
 						<BreadcrumbItem>
 							<BreadcrumbLink href="#">
-								Building Your Application
+								Community Driven Skill Sharing Platform
 							</BreadcrumbLink>
 						</BreadcrumbItem>
 						<BreadcrumbSeparator />
 						<BreadcrumbItem>
-							<BreadcrumbPage>Data Fetching</BreadcrumbPage>
+							<BreadcrumbPage>Skill Paradox</BreadcrumbPage>
 						</BreadcrumbItem>
 					</BreadcrumbList>
 				</Breadcrumb>
