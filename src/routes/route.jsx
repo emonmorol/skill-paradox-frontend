@@ -16,6 +16,7 @@ import CheckoutPage from "../pages/CheckoutPage";
 import PrivateRoute from "../components/custom/PrivateRoute";
 import { LoadingSkeleton } from "../components/custom/LoadingSkeleton";
 import MyListingsCardProps from "../layout/myListings/MyListingsCardProps";
+import ProfilePage from "@/pages/ProfilePage";
 
 const routes = createBrowserRouter([
 	{

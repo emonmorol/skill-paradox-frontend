@@ -7,46 +7,48 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { useAuth } from "@/context/AuthContext";
 
-const initialUser = {
-	id: 1,
-	name: "Abu Bakar",
-	username: "abubakar1984",
-	email: "abubakar@example.com",
-	profile_picture: "", // or URL string
-	location: "Cumilla, Bangladesh",
-	availability: "Weekdays 9am - 6pm",
-	contact_info: "+880123456789",
-	is_active: true,
-	skills: [
-		{ id: 1, name: "JavaScript", type: "offer" },
+export default function ProfilePage() {
+	const { user } = useAuth();
+	const [users, setUsers] = useState(user);
+	const [editingSection, setEditingSection] = useState(null);
+	const [tempData, setTempData] = useState({});
+	const fileInputRef = useRef(null);
+
+	const skills = [
+		{
+			id: 1,
+			name: "JavaScript",
+			type: "offer",
+		},
 		{ id: 2, name: "React", type: "offer" },
 		{ id: 3, name: "Tailwind", type: "need" },
-	],
-	certifications: [
+	];
+
+	const certifications = [
 		{
 			id: 1,
 			skill: "JavaScript",
 			level: "Professional",
 			status: "approved",
 		},
-		{ id: 2, skill: "React", level: "Beginner", status: "pending" },
-	],
-	badges: [
+		{
+			id: 2,
+			skill: "React",
+			level: "Beginner",
+			status: "pending",
+		},
+	];
+
+	const badges = [
 		{
 			id: 1,
 			name: "Early Adopter",
 			description: "Joined in the early phase",
 		},
 		{ id: 2, name: "Skill Sharer", description: "Shared 3+ skills" },
-	],
-};
-
-export default function FullProfilePage() {
-	const [user, setUser] = useState(initialUser);
-	const [editingSection, setEditingSection] = useState(null);
-	const [tempData, setTempData] = useState({});
-	const fileInputRef = useRef(null);
+	];
 
 	function startEditing(section) {
 		setEditingSection(section);
@@ -73,14 +75,14 @@ export default function FullProfilePage() {
 
 	function saveEditing() {
 		if (editingSection === "info") {
-			setUser((prev) => ({
+			setUsers((prev) => ({
 				...prev,
 				...tempData,
 				profile_picture:
 					tempData.profile_picture || prev.profile_picture,
 			}));
 		} else {
-			setUser((prev) => ({
+			setUsers((prev) => ({
 				...prev,
 				[editingSection]: tempData,
 			}));
@@ -152,7 +154,7 @@ export default function FullProfilePage() {
 	}
 
 	return (
-		<div className="min-h-screen bg-gray-50 px-8 py-12 max-w-[1400px] mx-auto">
+		<div className="min-h-screen px-8 py-12 max-w-[1400px] mx-auto">
 			<div className="flex flex-col md:flex-row md:gap-10">
 				{/* Left panel - User Info */}
 				<Card className="flex-shrink-0 w-full md:w-[320px] p-8 shadow-lg">
@@ -164,11 +166,11 @@ export default function FullProfilePage() {
 									<AvatarImage
 										src={tempData.profile_picture}
 									/>
-								) : user.profile_picture ? (
-									<AvatarImage src={user.profile_picture} />
+								) : users.profile_picture ? (
+									<AvatarImage src={users.profile_picture} />
 								) : (
 									<AvatarFallback className="text-7xl font-extrabold text-indigo-600">
-										{user.name[0]}
+										{users.name[0]}
 									</AvatarFallback>
 								)}
 							</Avatar>
@@ -209,7 +211,7 @@ export default function FullProfilePage() {
 									/>
 								) : (
 									<h1 className="text-3xl font-bold text-indigo-700">
-										{user.name}
+										{users.name}
 									</h1>
 								)}
 
@@ -233,7 +235,7 @@ export default function FullProfilePage() {
 										className="text-center"
 									/>
 								) : (
-									user.username
+									users.username
 								)}
 							</p>
 
@@ -247,12 +249,12 @@ export default function FullProfilePage() {
 										className="text-center"
 									/>
 								) : (
-									user.email
+									users.email
 								)}
 							</p>
 
 							<p className="text-gray-600 mb-1 text-center">
-								📍{" "}
+								{" "}
 								{editingSection === "info" ? (
 									<Input
 										name="location"
@@ -261,12 +263,12 @@ export default function FullProfilePage() {
 										className="text-center"
 									/>
 								) : (
-									user.location
+									users.location
 								)}
 							</p>
 
 							<p className="text-gray-600 mb-3 text-center">
-								📞{" "}
+								{" "}
 								{editingSection === "info" ? (
 									<Input
 										name="contact_info"
@@ -275,13 +277,13 @@ export default function FullProfilePage() {
 										className="text-center"
 									/>
 								) : (
-									user.contact_info
+									users.contact_info
 								)}
 							</p>
 
 							<p
 								className={`font-semibold text-center ${
-									user.is_active
+									users.is_active
 										? "text-green-600"
 										: "text-red-600"
 								} mb-3`}
@@ -305,7 +307,7 @@ export default function FullProfilePage() {
 											Active
 										</Label>
 									</div>
-								) : user.is_active ? (
+								) : users.is_active ? (
 									"✔ Active"
 								) : (
 									"❌ Inactive"
@@ -402,7 +404,7 @@ export default function FullProfilePage() {
 							</>
 						) : (
 							<div className="flex flex-wrap gap-3">
-								{user.skills.map((skill) => (
+								{skills.map((skill) => (
 									<Badge
 										key={skill.id}
 										variant={
@@ -516,7 +518,7 @@ export default function FullProfilePage() {
 							</>
 						) : (
 							<div className="space-y-2">
-								{user.certifications.map((cert) => (
+								{certifications.map((cert) => (
 									<div
 										key={cert.id}
 										className="flex justify-between border-b pb-2 text-sm"
@@ -619,7 +621,7 @@ export default function FullProfilePage() {
 							</>
 						) : (
 							<div className="space-y-3">
-								{user.badges.map((badge) => (
+								{badges.map((badge) => (
 									<div
 										key={badge.id}
 										className="bg-indigo-100 p-3 rounded-md text-indigo-700 shadow-sm"

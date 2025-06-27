@@ -53,7 +53,7 @@ export function NavUser({ user }) {
 									alt={user.name}
 								/>
 								<AvatarFallback className="rounded-lg">
-									CN
+									SP
 								</AvatarFallback>
 							</Avatar>
 							<div className="grid flex-1 text-left text-sm leading-tight">
@@ -81,7 +81,7 @@ export function NavUser({ user }) {
 										alt={user.name}
 									/>
 									<AvatarFallback className="rounded-lg">
-										CN
+										SP
 									</AvatarFallback>
 								</Avatar>
 								<div className="grid flex-1 text-left text-sm leading-tight">
@@ -94,13 +94,6 @@ export function NavUser({ user }) {
 								</div>
 							</div>
 						</DropdownMenuLabel>
-						<DropdownMenuSeparator />
-						<DropdownMenuGroup>
-							<DropdownMenuItem>
-								<Sparkles />
-								Upgrade to Pro
-							</DropdownMenuItem>
-						</DropdownMenuGroup>
 						<DropdownMenuSeparator />
 						<DropdownMenuGroup>
 							<DropdownMenuItem
