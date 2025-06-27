@@ -70,6 +70,10 @@ const routes = createBrowserRouter([
 				path: "/checkout", // ✅ ADD THIS
 				element: <CheckoutPage />,
 			},
+			{
+				path: "profile", // ✅ ADD THIS
+				element: <ProfilePage />,
+			},
 		],
 	},
 	{

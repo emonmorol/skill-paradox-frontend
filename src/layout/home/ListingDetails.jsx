@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Star, Users } from "lucide-react";
 import axiosInstance from "@/utils/axiosInstance";
@@ -171,12 +170,15 @@ export default function ListingDetails() {
 			.map((word) => word?.charAt(0).toUpperCase() + word?.slice(1))
 			.join(" ");
 
-	// Helper to check if any slot of a pricing type is unavailable
 	const hasUnavailableSlot = (pricingType) =>
 		listing.slots.some(
 			(slot) =>
 				slot.pricing_type === pricingType && slot.is_available === false
 		);
+
+	const handleEnroll = (state) => {
+		navigate("/checkout", { state });
+	};
 
 	return (
 		// <div>this is details page</div>
@@ -423,15 +425,14 @@ export default function ListingDetails() {
 					</ul>
 				</section>
 
-				{/* Buttons */}
+				{/* Back Button */}
 				<div className="flex gap-6 justify-center md:justify-end mt-12">
-					<Button
-						variant="outline"
-						className="border-indigo-600 text-indigo-600 hover:bg-indigo-100 font-semibold rounded-xl px-8 py-4 transition-colors duration-300 text-lg"
+					<button
+						className="border border-indigo-600 text-indigo-600 hover:bg-indigo-100 font-semibold rounded-xl px-8 py-4 transition-colors duration-300 text-lg"
 						onClick={() => navigate(-1)}
 					>
 						Back
-					</Button>
+					</button>
 				</div>
 			</div>
 		</motion.div>
