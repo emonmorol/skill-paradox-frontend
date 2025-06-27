@@ -6,7 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Star, Flame } from "lucide-react";
 import bann from "../assets/listing_banner.jpg";
 
-export default function TrendingSkillCard(props) {
+export default function ListingCard(props) {
 	const {
 		id,
 		title,
@@ -50,9 +50,7 @@ export default function TrendingSkillCard(props) {
 						{title}
 					</CardTitle>
 					<p className="text-sm text-muted-foreground">
-						{description.length > 100
-							? description.slice(0, 50) + "..."
-							: description}
+						{ description}
 					</p>
 				</CardHeader>
 				<CardContent className="space-y-3">

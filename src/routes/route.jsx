@@ -3,7 +3,7 @@ import App from "../App";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
-import UpcomingEventCardProps from "../layout/events/UpcomingEventCardProps";
+import UpcomingEventCardProps from "../layout/myListings/MyListingsCardProps";
 import ListingCard from "../layout/home/ListingCardProps";
 import AddSkill from "../layout/skills/AddSkill";
 import BarterRequestCardProps from "../layout/skillExchange/BarterRequestCardProps";
@@ -15,6 +15,7 @@ import ListingDetails from "../layout/home/ListingDetails";
 import CheckoutPage from "../pages/CheckoutPage";
 import PrivateRoute from "../components/custom/PrivateRoute";
 import { LoadingSkeleton } from "../components/custom/LoadingSkeleton";
+import MyListingsCardProps from "../layout/myListings/MyListingsCardProps";
 
 const routes = createBrowserRouter([
 	{
@@ -34,23 +35,23 @@ const routes = createBrowserRouter([
 				element: <LoadingSkeleton />,
 			},
 			{
-				path: "offered",
-				element: <UpcomingEventCardProps />,
+				path: "my-listings",
+				element: <MyListingsCardProps />,
 			},
 			{
 				path: "addnewskill",
 				element: <AddSkill />,
 			},
 			{
-				path: "barterrequest",
+				path: "requests",
 				element: <BarterRequestCardProps />,
 			},
 			{
-				path: "paidsession",
+				path: "ongoing",
 				element: <PaidSessionCardProps />,
 			},
 			{
-				path: "sessionhistory",
+				path: "history",
 				element: <SessionHistoryCardProps />,
 			},
 			{

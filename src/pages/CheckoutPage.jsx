@@ -1,55 +1,294 @@
-import React, { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Loader2, CreditCard } from "lucide-react";
+import { motion } from "framer-motion";
+import Swal from "sweetalert2";
+
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "@/components/ui/select";
+import axiosInstance from "@/utils/axiosInstance";
 
 export default function CheckoutPage() {
 	const navigate = useNavigate();
 	const location = useLocation();
-	const { pricingType, amount, currency } = location.state || {};
+
+	const {
+		creditHour,
+		currency,
+		is_available,
+		listing_id,
+		listingTitle,
+		contributor,
+		pricingType,
+		amount,
+	} = location.state || {};
 
 	const [isProcessing, setIsProcessing] = useState(false);
+	const [transactionId, setTransactionId] = useState("");
+	const [phoneNumber, setPhoneNumber] = useState("");
+	const [offeredListingId, setOfferedListingId] = useState("");
+	const [userListings, setUserListings] = useState([]);
 
-	const handlePayment = () => {
+	useEffect(() => {
+		if (pricingType === "semi_trade" || pricingType === "trade") {
+			const fetchListings = async () => {
+				try {
+					const res = await axiosInstance.get("/listings/my");
+					setUserListings(res.data.data);
+				} catch (error) {
+					if (error.name !== "CanceledError") {
+						console.error("Failed to fetch listings:", error);
+					}
+				}
+			};
+
+			fetchListings();
+		}
+	}, [pricingType]);
+
+	const handlePayment = async () => {
+		if (
+			(pricingType === "paid" || pricingType === "semi_trade") &&
+			(!transactionId.trim() || !phoneNumber.trim())
+		) {
+			alert("Please fill out Transaction ID and Phone Number.");
+			return;
+		}
+
+		if (
+			(pricingType === "semi_trade" || pricingType === "trade") &&
+			!offeredListingId
+		) {
+			alert("Please select a course to offer.");
+			return;
+		}
+
 		setIsProcessing(true);
-		setTimeout(() => {
-			alert("Payment Successful!");
-			navigate("/");
-		}, 2000);
+
+		const payload = {
+			listing_id,
+			pricing_type: pricingType,
+			transaction_id: transactionId || null,
+			phone_number: phoneNumber || null,
+			offered_listing_id: offeredListingId || null,
+		};
+
+		// try {
+		// 	await axios.post("/api/enroll", payload);
+		// 	Swal.fire({
+		// 		title: "Enrolled",
+		// 		text: "Payment and Enrollment complete!",
+		// 		icon: "success",
+		// 		confirmButtonText: "Alhamdulillah",
+		// 	});
+		// 	navigate("/myschedule");
+		// } catch (error) {
+		// 	console.error(error);
+		// 	Swal.fire("Error", "Failed to enroll", "error");
+		// } finally {
+		// 	setIsProcessing(false);
+		// }
 	};
 
-	if (!pricingType || !amount || !currency) {
+	if (
+		!creditHour ||
+		!currency ||
+		!is_available ||
+		!listing_id ||
+		!pricingType
+	) {
 		return (
-			<div className="p-8 text-center">Missing checkout information.</div>
+			<div className="p-8 text-center text-red-600 text-xl font-semibold">
+				Missing checkout information. Please go back and try again.
+			</div>
 		);
 	}
 
 	return (
-		<div className="min-h-screen flex items-center justify-center bg-gray-100 px-6">
-			<div className="bg-white p-10 rounded-2xl shadow-xl max-w-lg w-full text-center space-y-6">
-				<h2 className="text-3xl font-bold text-indigo-700">Checkout</h2>
-				<p className="text-lg text-gray-700">
-					You are about to purchase the{" "}
-					<span className="font-semibold">{pricingType}</span>{" "}
-					package.
-				</p>
-				<p className="text-2xl text-gray-900 font-semibold">
-					Total: {amount} {currency}
-				</p>
-				<Button
-					onClick={handlePayment}
-					className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl text-lg transition-colors"
-					disabled={isProcessing}
+		<div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 flex items-center justify-center px-4 py-12">
+			<motion.div
+				initial={{ opacity: 0, y: 20 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.6, ease: "easeOut" }}
+				className="w-full max-w-5xl bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl border border-white/40 p-10 md:p-14 grid md:grid-cols-2 gap-12"
+			>
+				{/* Left - Course Details */}
+				<motion.div
+					initial={{ x: -50, opacity: 0 }}
+					animate={{ x: 0, opacity: 1 }}
+					transition={{ delay: 0.3 }}
+					className="space-y-6"
 				>
-					{isProcessing ? "Processing..." : "Pay Now"}
-				</Button>
-				<Button
-					variant="outline"
-					className="w-full mt-4 border-indigo-600 text-indigo-600 hover:bg-indigo-100 py-3 rounded-xl text-lg"
-					onClick={() => navigate(-1)}
+					<h2 className="text-4xl font-extrabold text-indigo-800">
+						🚀 Checkout
+					</h2>
+					<p className="text-gray-700 text-lg">
+						You're enrolling in:
+					</p>
+					<div className="bg-white/60 p-6 rounded-2xl shadow-md space-y-2 border border-gray-200">
+						<h3 className="text-2xl font-semibold text-indigo-800">
+							{listingTitle}
+						</h3>
+						<p className="text-gray-600 text-lg">
+							By {contributor}
+						</p>
+						<p className="text-gray-600">
+							⏳ {creditHour} Credit Hours
+						</p>
+						<p className="text-gray-600 capitalize">
+							Type:{" "}
+							<span className="font-semibold">{pricingType}</span>
+						</p>
+					</div>
+					<p className="text-sm text-gray-500">
+						💡 After completing payment, your learning journey
+						begins instantly!
+					</p>
+				</motion.div>
+
+				{/* Right - Payment & Input */}
+				<motion.div
+					initial={{ x: 50, opacity: 0 }}
+					animate={{ x: 0, opacity: 1 }}
+					transition={{ delay: 0.4 }}
+					className="space-y-6"
 				>
-					Cancel
-				</Button>
-			</div>
+					{/* Payment Summary */}
+					{pricingType !== "trade" && (
+						<div className="bg-gradient-to-r from-indigo-100 via-white to-purple-100 rounded-2xl p-6 shadow-inner space-y-5 border border-indigo-200">
+							<h3 className="text-xl font-bold text-indigo-700 mb-3 flex items-center gap-2">
+								<CreditCard className="w-6 h-6" /> Payment
+								Summary
+							</h3>
+							<div className="flex justify-between text-gray-800 text-lg">
+								<span>Subtotal</span>
+								<span>
+									{amount.toFixed(2)} {currency}
+								</span>
+							</div>
+							<div className="flex justify-between text-gray-700 text-lg">
+								<span>VAT (5%)</span>
+								<span>
+									{(amount * 0.05).toFixed(2)} {currency}
+								</span>
+							</div>
+							<hr />
+							<div className="flex justify-between text-indigo-700 text-xl font-bold">
+								<span>Total</span>
+								<span>
+									{(amount * 1.05).toFixed(2)} {currency}
+								</span>
+							</div>
+						</div>
+					)}
+
+					{/* Input Fields */}
+					<div className="space-y-4">
+						{(pricingType === "paid" ||
+							pricingType === "semi_trade") && (
+							<>
+								<div>
+									<label
+										htmlFor="transactionId"
+										className="block text-sm font-medium text-gray-700 mb-1"
+									>
+										Transaction ID
+									</label>
+									<input
+										type="text"
+										id="transactionId"
+										placeholder="Enter transaction/reference ID"
+										value={transactionId}
+										onChange={(e) =>
+											setTransactionId(e.target.value)
+										}
+										className="block w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+									/>
+								</div>
+
+								<div>
+									<label
+										htmlFor="phoneNumber"
+										className="block text-sm font-medium text-gray-700 mb-1"
+									>
+										Phone Number
+									</label>
+									<input
+										type="tel"
+										id="phoneNumber"
+										placeholder="Enter your phone number"
+										value={phoneNumber}
+										onChange={(e) =>
+											setPhoneNumber(e.target.value)
+										}
+										className="block w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+									/>
+								</div>
+							</>
+						)}
+
+						{(pricingType === "semi_trade" ||
+							pricingType === "trade") && (
+							<div>
+								<label className="block text-sm font-medium text-gray-700 mb-1">
+									Offer Your Course in Exchange
+								</label>
+								<Select
+									value={offeredListingId}
+									onValueChange={setOfferedListingId}
+								>
+									<SelectTrigger className="w-full">
+										<SelectValue placeholder="Select a course to offer" />
+									</SelectTrigger>
+									<SelectContent>
+										{userListings.map((listing) => (
+											<SelectItem
+												key={listing.id}
+												value={listing.id.toString()}
+											>
+												{listing.title}
+											</SelectItem>
+										))}
+									</SelectContent>
+								</Select>
+							</div>
+						)}
+					</div>
+
+					{/* Action Buttons */}
+					<motion.button
+						onClick={handlePayment}
+						disabled={isProcessing}
+						whileTap={{ scale: 0.95 }}
+						className={`w-full text-white text-lg font-semibold py-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-md ${
+							isProcessing
+								? "bg-gray-400 cursor-wait"
+								: "bg-indigo-600 hover:bg-indigo-700"
+						}`}
+					>
+						{isProcessing ? (
+							<>
+								<Loader2 className="h-5 w-5 animate-spin" />
+								Processing...
+							</>
+						) : (
+							"Confirm Enrollment"
+						)}
+					</motion.button>
+
+					<button
+						onClick={() => navigate(-1)}
+						className="w-full mt-2 text-indigo-700 font-medium border border-indigo-300 rounded-xl py-2 hover:bg-indigo-100 transition"
+					>
+						Cancel
+					</button>
+				</motion.div>
+			</motion.div>
 		</div>
 	);
 }

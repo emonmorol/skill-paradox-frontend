@@ -51,7 +51,7 @@ const data = {
 			title: "Skills",
 			icon: WrenchIcon,
 			items: [
-				{ title: "My Listings", url: "/offered" },
+				{ title: "My Listings", url: "/my-listings" },
 				{ title: "Add New Skill", url: "/addnewskill" },
 			],
 		},
@@ -59,9 +59,9 @@ const data = {
 			title: "Skill Exchange",
 			icon: Repeat1Icon,
 			items: [
-				{ title: "Barter Requests", url: "/barterrequest" },
-				{ title: "Paid Sessions", url: "/paidsession" },
-				{ title: "Session History", url: "/sessionhistory" },
+				{ title: "Requests", url: "/requests" },
+				{ title: "Ongoing", url: "/ongoing" },
+				{ title: "History", url: "/history" },
 			],
 		},
 		{

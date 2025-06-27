@@ -322,9 +322,16 @@ export default function ListingDetails() {
 									onClick={() =>
 										navigate("/checkout", {
 											state: {
-												pricingType: "Paid", // or dynamically use selected type
-												amount: 99.99,
-												currency: "USD",
+												listing_id: listing.id,
+												listingTitle: listing.title,
+												contributor: listing.user.name, // or however you pass the user's name
+												creditHour: item.credit_hour,
+												currency: item.currency,
+												pricingType: item.type,
+												amount:
+													item.price *
+													item.credit_hour,
+												is_available: item.is_available,
 											},
 										})
 									}
