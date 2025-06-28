@@ -10,13 +10,14 @@ import BarterRequestCardProps from "../layout/skillExchange/BarterRequestCardPro
 import PaidSessionCardProps from "../layout/skillExchange/PaidSessionCardPros";
 import SessionHistoryCardProps from "../layout/skillExchange/SessionHistoryCardProps";
 import AlertCardProps from "../layout/home/AlertCardProps";
-import MyScheduleProps from "../layout/bookings/MyScheduleProps";
 import ListingDetails from "../layout/home/ListingDetails";
 import CheckoutPage from "../pages/CheckoutPage";
 import PrivateRoute from "../components/custom/PrivateRoute";
 import { LoadingSkeleton } from "../components/custom/LoadingSkeleton";
 import MyListingsCardProps from "../layout/myListings/MyListingsCardProps";
 import ProfilePage from "@/pages/ProfilePage";
+import MyScheduleProps from "@/layout/bookings/MyScheduleProps";
+import AllBookings from "@/layout/bookings/AllBookings";
 
 const routes = createBrowserRouter([
 	{
@@ -56,24 +57,28 @@ const routes = createBrowserRouter([
 				element: <SessionHistoryCardProps />,
 			},
 			{
-				path: "myschedule",
+				path: "my-schedule",
 				element: <MyScheduleProps />,
 			},
 			{
 				path: "test",
-				element: <MyScheduleProps />,
+				element: <myscheduleProps />,
 			},
 			{
 				path: "listing/:id",
 				element: <ListingDetails />,
 			},
 			{
-				path: "/checkout", // ✅ ADD THIS
+				path: "/checkout",
 				element: <CheckoutPage />,
 			},
 			{
-				path: "profile", // ✅ ADD THIS
+				path: "profile",
 				element: <ProfilePage />,
+			},
+			{
+				path: "bookings",
+				element: <AllBookings />,
 			},
 		],
 	},

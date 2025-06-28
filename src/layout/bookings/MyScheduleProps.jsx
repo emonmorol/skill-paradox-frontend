@@ -12,15 +12,41 @@ import { format } from "date-fns";
 import { toast } from "sonner";
 import SlotDialog from "../../components/custom/SlotDialog";
 import SlotButton from "../../components/custom/SlotButton";
+import { useAuth } from "@/context/AuthContext";
+import Swal from "sweetalert2";
 
 export default function MyScheduleProps() {
 	const [selectedDate, setSelectedDate] = useState(null);
 	const [dialogOpen, setDialogOpen] = useState(false);
 	const [currentSlot, setCurrentSlot] = useState(null);
+	const [dialogPayload, setDialogPayload] = useState(null);
+	const { user } = useAuth();
 
 	const handleSlotClick = (slotNumber) => {
-		setCurrentSlot(slotNumber);
-		setDialogOpen(true);
+		if (!selectedDate) {
+			toast.error("Please select a date first.");
+			return;
+		}
+		const day = format(selectedDate, "EEEE");
+		const date = format(selectedDate, "yyyy-MM-dd");
+		console.log(date);
+		setDialogPayload({
+			user_id: user.id,
+			days_of_week: day.toLowerCase(),
+			slot_time: slotNumber,
+			scheduled_date: date,
+		});
+		if (dialogPayload === null) {
+			Swal.fire({
+				icon: "error",
+				title: "Error",
+				text: "Something went wrong.Try Again!",
+			});
+		} else {
+			console.log(dialogPayload);
+			setCurrentSlot(slotNumber);
+			setDialogOpen(true);
+		}
 	};
 
 	return (
@@ -73,6 +99,7 @@ export default function MyScheduleProps() {
 				open={dialogOpen}
 				onClose={setDialogOpen}
 				slotNumber={currentSlot}
+				payload={dialogPayload}
 			/>
 		</div>
 	);

@@ -68,9 +68,9 @@ const data = {
 			title: "Bookings",
 			icon: Calendar1Icon,
 			items: [
-				{ title: "My Schedule", url: "myschedule" },
+				{ title: "My Schedule", url: "/my-schedule" },
+				{ title: "All Bookings", url: "/bookings" },
 				{ title: "Confirmed Sessions", url: "#" },
-				{ title: "Cancelled/Rescheduled", url: "#" },
 			],
 		},
 		{

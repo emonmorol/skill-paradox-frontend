@@ -103,7 +103,7 @@ export default function CheckoutPage() {
 				icon: "success",
 				confirmButtonText: "Alhamdulillah",
 			});
-			navigate("/myschedule");
+			navigate("/my-schedule");
 		} catch (error) {
 			console.error(error);
 			Swal.fire("Error", "Failed to enroll", "error");
