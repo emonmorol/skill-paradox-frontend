@@ -54,17 +54,17 @@ export default function CheckoutPage() {
 	}, [pricing_type]);
 
 	const handlePayment = async () => {
-		console.log({
-			transactionId,
-			phoneNumber,
-			offeredListingId,
-			pricing_type,
-			listing_id,
-			user_id: user.id,
-			credit_hours_remaining: creditHour,
-			amount,
-			currency,
-		});
+		// console.log({
+		// 	transactionId,
+		// 	phoneNumber,
+		// 	offeredListingId,
+		// 	pricing_type,
+		// 	listing_id,
+		// 	user_id: user.id,
+		// 	credit_hours_remaining: creditHour,
+		// 	amount,
+		// 	currency,
+		// });
 		if (
 			(pricing_type === "paid" || pricing_type === "semi_trade") &&
 			(!transactionId.trim() || !phoneNumber.trim())

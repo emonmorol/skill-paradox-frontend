@@ -87,7 +87,7 @@ export default function BookingCard({ bookings = [], onAction = () => {} }) {
 
 						{/* Pricing Type */}
 						<p className="capitalize">
-							{booking.ppricing_type || "N/A"}
+							{booking.pricing_type || "N/A"}
 						</p>
 
 						{/* Status */}

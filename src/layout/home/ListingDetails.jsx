@@ -25,7 +25,7 @@ export default function ListingDetails() {
 		fetchListing();
 	}, [listingId]);
 
-	console.log(listing);
+	// console.log(listing);
 
 	if (!listing) {
 		return (

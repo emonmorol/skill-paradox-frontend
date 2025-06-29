@@ -93,7 +93,7 @@ export default function BarterRequestCardProps() {
 		fetchTradeRequests();
 	}, [user]);
 
-	console.log(tradeRequests);
+	// console.log(tradeRequests);
 	return (
 		<div className="p-4 flex flex-wrap gap-6">
 			{tradeRequests.length !== 0 ? (

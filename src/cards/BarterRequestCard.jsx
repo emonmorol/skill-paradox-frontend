@@ -63,10 +63,10 @@ export default function BarterRequestCard({
 	const handleAction = async (actionName) => {
 		setIsLoading(true);
 		try {
-			console.log({
-				id: id,
-				action: actionName,
-			});
+			// console.log({
+			// 	id: id,
+			// 	action: actionName,
+			// });
 			await axiosInstance.patch(`/barter/response`, {
 				id: id,
 				action: actionName,

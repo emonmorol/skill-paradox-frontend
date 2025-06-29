@@ -164,12 +164,9 @@ export default function AddSkill() {
 			faqs: faqs,
 			slots: slots,
 		};
-
+		console.log({ payload });
 		try {
-			await axiosInstance.post(
-				"/listings/create-listing",
-				payload
-			);
+			await axiosInstance.post("/listings/create-listing", payload);
 			Swal.fire({
 				title: "Created!",
 				text: "Listing Created Successfully",
@@ -177,6 +174,7 @@ export default function AddSkill() {
 				confirmButtonText: "Alhamdulillah",
 			});
 		} catch (error) {
+			console.log(error);
 			Swal.fire({
 				title: "Error!",
 				text: error?.message,

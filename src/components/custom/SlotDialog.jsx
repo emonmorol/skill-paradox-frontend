@@ -27,18 +27,18 @@ export default function SlotDialog({ open, onClose, slotNumber, payload }) {
 					const { user_id, days_of_week, slot_time, scheduled_date } =
 						payload;
 					setScheduledDate(scheduled_date);
-					console.log("inside ", payload);
+					// console.log("inside ", payload);
 					const res = await axiosInstance.get(
 						"/bookings/available-listings",
 						{
 							params: { user_id, days_of_week, slot_time },
 						}
 					);
-					console.log("Response", res.data);
+					// console.log("Response", res.data);
 					setAvailableListing(res.data.data);
 				}
 			} catch (error) {
-				console.log(error);
+				// console.log(error);
 				Swal.fire({
 					icon: "warning",
 					title: "Closed",
@@ -49,12 +49,12 @@ export default function SlotDialog({ open, onClose, slotNumber, payload }) {
 				setAvailableListing([]);
 			}
 		};
-		console.log("available listing = ", availableListing);
+		// console.log("available listing = ", availableListing);
 		fetchListings();
 	}, [slotNumber]);
 
 	const handleCourseClick = async (listing) => {
-		console.log(listing);
+		// console.log(listing);
 
 		const payload = {
 			listing_id: listing.listing_id,
@@ -70,7 +70,7 @@ export default function SlotDialog({ open, onClose, slotNumber, payload }) {
 				"/bookings/new-booking",
 				payload
 			);
-			console.log("Response", res.data);
+			// console.log("Response", res.data);
 			Swal.fire({
 				icon: "success",
 				title: "Complete",

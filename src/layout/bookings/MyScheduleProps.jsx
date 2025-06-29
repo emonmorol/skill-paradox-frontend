@@ -29,7 +29,7 @@ export default function MyScheduleProps() {
 		}
 		const day = format(selectedDate, "EEEE");
 		const date = format(selectedDate, "yyyy-MM-dd");
-		console.log(date);
+		// console.log(date);
 		setDialogPayload({
 			user_id: user.id,
 			days_of_week: day.toLowerCase(),
@@ -43,7 +43,7 @@ export default function MyScheduleProps() {
 				text: "Something went wrong.Try Again!",
 			});
 		} else {
-			console.log(dialogPayload);
+			// console.log(dialogPayload);
 			setCurrentSlot(slotNumber);
 			setDialogOpen(true);
 		}

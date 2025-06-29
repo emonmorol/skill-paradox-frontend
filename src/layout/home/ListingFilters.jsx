@@ -93,7 +93,7 @@ export default function ListingFilters({ filters, setFilters }) {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(filterOptions);
+		// console.log(filterOptions);
 		setFilters(filterOptions);
 	};
 

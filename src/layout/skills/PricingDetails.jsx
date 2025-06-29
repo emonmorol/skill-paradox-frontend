@@ -28,7 +28,7 @@ export default function PricingDetails({ pricing, setPricing }) {
 			...updated[index],
 			[field]: value,
 		};
-		console.log("pricing", pricing);
+		// console.log("pricing", pricing);
 
 		setPricing(updated);
 	};

@@ -63,7 +63,7 @@ export default function AllBookings() {
 				const res = await axiosInstance.get("/bookings", {
 					params: { id: user.id, status: statusFilter },
 				});
-				console.log(res.data);
+				// console.log(res.data);
 				setBookings(res.data.data);
 			} catch (error) {
 				if (error.name !== "CanceledError") {
